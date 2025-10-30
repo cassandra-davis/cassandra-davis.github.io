@@ -1,5 +1,3 @@
-# cassandra-davis.github.io
-
 # 🌸 Cassandra Davis
 
 **Senior Calibration Engineer | Data Analyst | Technical Writer**
