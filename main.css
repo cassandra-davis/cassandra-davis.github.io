@@ -33,7 +33,7 @@ body {
 
 /* Sidebar header */
 .sidebar-header h2 {
-  font-family: 'Ma Shan Zheng', cursive;
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
   font-size: 24px;
   color: #333;
   margin-bottom: 5px;
