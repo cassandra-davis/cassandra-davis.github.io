@@ -142,8 +142,8 @@ section h1 {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+  gap: 1.5rem; /* match services gap */
 }
 
 .project-box {
@@ -291,6 +291,10 @@ section h1 {
 
   .services-grid {
     grid-template-columns: 1fr;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr; /* collapse to 1 column on small screens */
   }
 
   .sidebar-footer {
