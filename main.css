@@ -135,9 +135,8 @@ section h1 {
 
 /* --- Project Boxes --- */
 .projects {
-  margin: 60px auto;
-  max-width: 1000px;
-  padding: 20px;
+  width: 100%;
+  padding: 2rem 0; /* match main content padding */
 }
 
 .project-grid {
