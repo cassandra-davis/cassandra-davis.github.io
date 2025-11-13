@@ -325,7 +325,7 @@ section h1 {
 
   .about-me img {
     width: 100%;       /* full width on mobile */
-    max-width: 400px;  /* optional: limit size */
+    max-width: 600px;  /* optional: limit size */
     height: auto;
     display: block;
     margin: 0 auto;
