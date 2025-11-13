@@ -23,60 +23,62 @@ body {
   top: 0;
   width: 250px;
   height: 100%;
-  background-color: #dc7973;
-  text-align: center;
-  padding-top: 30px;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  background-color: #fff3b0; /* butter yellow */
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* push footer to bottom */
+  padding: 20px 15px;
+  box-shadow: 3px 0 15px rgba(0,0,0,0.1);
 }
 
+/* Sidebar header */
 .sidebar-header h2 {
   font-family: 'Ma Shan Zheng', cursive;
   font-size: 24px;
-  color: #fff;
+  color: #333;
   margin-bottom: 5px;
 }
 
 .sidebar-header p {
   font-size: 14px;
-  color: #fff;
+  color: #555;
   margin-bottom: 20px;
 }
 
+/* Sidebar nav links */
 .sidebar-nav {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
 .sidebar-nav a {
   text-decoration: none;
-  color: #fff;
+  color: #333;
   font-size: 18px;
   font-weight: 600;
-  padding: 10px 0;
+  padding: 8px 10px;
   border-radius: 8px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 .sidebar-nav a:hover {
-  background-color: #ffe380;
-  color: #333;
+  background-color: #dc7973; /* contrast hover */
+  color: #fff;
 }
 
 /* Sidebar footer */
 .sidebar-footer {
   font-family: "Titillium Web", sans-serif;
-  font-size: 0.9rem;
-  color: #fff;
-  margin-bottom: 20px;
+  font-size: 0.85rem;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
 }
 
 /* --- Main Content --- */
 .main-content {
-  margin-left: 260px; /* space for sidebar */
+  margin-left: 270px; /* leave space for sidebar */
   padding: 2rem;
 }
 
