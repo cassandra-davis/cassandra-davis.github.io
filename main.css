@@ -311,4 +311,24 @@ section h1 {
     margin-top: 20px;
     margin-bottom: 10px;
   }
+
+    .about-me table, 
+  .about-me tr {
+    display: block;
+  }
+
+  .about-me td {
+    width: 100%;
+    display: block;
+    padding: 0.5rem 0;
+  }
+
+  .about-me img {
+    width: 100%;       /* full width on mobile */
+    max-width: 400px;  /* optional: limit size */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
 }
