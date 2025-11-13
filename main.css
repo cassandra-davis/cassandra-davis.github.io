@@ -25,6 +25,7 @@ nav {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
   text-align: center;
   padding-top: 30px;
+  left: 100px;
 }
 
 nav img {
@@ -68,7 +69,7 @@ nav ul li a:hover {
 
 /* --- Main Content --- */
 .main {
-  margin-left: 270px; /* leave space for sidebar */
+  margin-left: 360px; /* leave space for sidebar */
   padding: 2rem;
 }
 
