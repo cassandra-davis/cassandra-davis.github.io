@@ -37,12 +37,14 @@ body {
   font-size: 24px;
   color: #333;
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .sidebar-header p {
   font-size: 14px;
   color: #555;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 /* Sidebar nav links */
