@@ -14,9 +14,8 @@ body {
   background-color: #fffef9;
   color: #333;
   line-height: 1.6;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
+  display: flex;
+  min-height: 100vh;
 }
 
 /* --- Colour Palette --- */
@@ -27,52 +26,69 @@ body {
   --text-light: #555;
   --border-grey: #ddd;
   --shadow: rgba(0, 0, 0, 0.08);
+  --sidebar-width: 220px;
 }
 
-/* --- Header / Hero --- */
-header {
-  text-align: center;
-  padding: 2rem 0;
-}
-
-header h1 {
-  font-size: 2.5rem;
-  color: var(--text-dark);
-  margin-bottom: 0.5rem;
-}
-
-header p {
-  font-size: 1.2rem;
-  color: var(--text-light);
-  margin-bottom: 1.5rem;
-}
-
-/* --- Navigation --- */
-nav {
+/* --- Sidebar --- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100%;
+  background-color: #fffef9;
+  border-right: 1px solid var(--border-grey);
+  box-shadow: 2px 0 8px var(--shadow);
+  padding: 2rem 1rem;
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin: 1.5rem 0;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-nav a {
+.sidebar-header h2 {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin-bottom: 0.2rem;
+}
+
+.sidebar-header p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+
+.sidebar-nav a {
   text-decoration: none;
   color: var(--text-dark);
-  font-weight: 700;
+  font-weight: 600;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   transition: all 0.2s ease;
-  font-size: 1rem;
+  display: block;
 }
 
-nav a:hover {
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
   background-color: var(--butter-hover);
+}
+
+/* --- Main Content --- */
+.main-content {
+  margin-left: var(--sidebar-width);
+  padding: 2rem;
+  flex: 1;
 }
 
 /* --- Sections --- */
 section, .about, .projects, .contact, .about-me {
-  margin: 2rem 0;
+  margin-bottom: 2rem;
   padding: 2rem;
   background-color: #ffffff;
   border: 1px solid var(--border-grey);
@@ -193,12 +209,34 @@ footer {
 
 /* --- Responsive --- */
 @media screen and (max-width: 900px) {
-  section, .about, .projects, .contact, .about-me {
+  body {
+    flex-direction: column;
+  }
+
+  .main-content {
+    margin-left: 0;
     padding: 1rem;
   }
 
-  nav {
-    flex-direction: column;
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-right: none;
+    box-shadow: none;
+    margin-bottom: 2rem;
+  }
+
+  .sidebar-header {
+    display: none;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
     gap: 1rem;
   }
 
