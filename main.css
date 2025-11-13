@@ -47,6 +47,13 @@ body {
   text-align: center;
 }
 
+.roles {
+  white-space: pre-wrap;      /* allows wrapping at zero-width spaces */
+  word-break: keep-all;       /* prevents breaking words mid-word */
+  font-size: 1rem;            /* adjust as needed */
+  line-height: 1.4;           /* optional for readability */
+}
+
 /* Sidebar nav links */
 .sidebar-nav {
   display: flex;
