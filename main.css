@@ -1,0 +1,142 @@
+/* --- Global Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+  background-color: #fffef9;
+  color: #333;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* --- Colour Palette --- */
+:root {
+  --butter-yellow: #fff3b0;
+  --butter-hover: #ffe380;
+  --text-dark: #2c2c2c;
+  --border-grey: #ddd;
+  --shadow: rgba(0, 0, 0, 0.05);
+}
+
+/* --- Header --- */
+header {
+  text-align: center;
+  padding: 1.5rem 0;
+  border-bottom: 3px solid var(--butter-yellow);
+}
+
+header h1 {
+  font-size: 2rem;
+  color: var(--text-dark);
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* --- Navigation --- */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  background-color: var(--butter-hover);
+}
+
+/* --- Sections --- */
+section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid var(--border-grey);
+  border-radius: 12px;
+  box-shadow: 2px 2px 8px var(--shadow);
+}
+
+section h2 {
+  border-left: 6px solid var(--butter-yellow);
+  padding-left: 0.8rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+/* --- Project Boxes --- */
+.project-box {
+  border: 1px solid var(--border-grey);
+  border-radius: 10px;
+  background-color: #fffef9;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  box-shadow: 1px 1px 6px var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 3px 3px 10px var(--shadow);
+}
+
+.project-box h3 {
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.project-box p {
+  color: #555;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* --- Contact Section --- */
+.contact {
+  text-align: center;
+  background-color: var(--butter-yellow);
+  border-radius: 10px;
+  padding: 2rem;
+  color: var(--text-dark);
+}
+
+.contact a {
+  color: var(--text-dark);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.2s ease;
+}
+
+.contact a:hover {
+  border-bottom: 2px solid var(--text-dark);
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-grey);
+  margin-top: 2rem;
+}
