@@ -64,7 +64,7 @@ body {
 
 .sidebar-nav a:hover {
   background-color: #ffe380; /* contrast hover */
-  color: #fff;
+  color: #333;
 }
 
 /* Sidebar footer */
@@ -170,7 +170,7 @@ section h1 {
 
 /* --- Contact Section --- */
 .contact {
-  text-align: center;
+  text-align: left;
   background-color: #fff3b0;
   border-radius: 12px;
   padding: 2rem;
