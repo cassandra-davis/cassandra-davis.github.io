@@ -142,16 +142,19 @@ section h1 {
 
 /* --- Project Boxes --- */
 .projects {
-  width: 100%;
-  padding: 2rem 0; /* match main content padding */
-  box-sizing: border-box;
+  padding: 2rem;               /* same as services section */
+  background-color: #fffef9;
+  border-radius: 12px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
 }
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
-  gap: 1.5rem; /* match services gap */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;            /* same as services */
 }
+
 
 .project-box {
   display: block;
