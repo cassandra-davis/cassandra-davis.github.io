@@ -103,6 +103,12 @@ section h1 {
 }
 
 /* --- Service Boxes --- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
 .service-box {
   border: 1px solid #ddd;
   border-radius: 12px;
@@ -222,6 +228,10 @@ section h1 {
   .main-content {
     margin-left: 0;
     padding: 1rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
   }
 
   .sidebar-footer {
