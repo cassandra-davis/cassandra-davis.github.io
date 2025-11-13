@@ -179,14 +179,15 @@ section h1 {
   border-bottom: 2px solid #2c2c2c;
 }
 
-/* --- Footer --- */
-footer {
+/* Footer inside sidebar */
+.sidebar-footer {
+  position: absolute;
+  bottom: 20px;  /* distance from bottom of sidebar */
+  width: 100%;
   text-align: center;
+  font-family: "Titillium Web", sans-serif;
   font-size: 0.9rem;
-  color: #777;
-  padding: 1rem 0;
-  border-top: 1px solid #ddd;
-  margin-top: 2rem;
+  color: #fff;   /* contrast with sidebar background */
 }
 
 /* --- Responsive --- */
