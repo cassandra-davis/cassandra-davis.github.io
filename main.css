@@ -16,60 +16,67 @@ body {
   line-height: 1.6;
 }
 
-/* --- Sidebar Navigation --- */
-nav {
-  position: fixed;
+/* --- Sidebar --- */
+.sidebar {
+  position: fixed;       /* fixed on page */
+  left: 0;
+  top: 0;
   width: 250px;
   height: 100%;
   background-color: #dc7973;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
   text-align: center;
   padding-top: 30px;
-  left: 100px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* push footer to bottom */
 }
 
-nav img {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  margin-bottom: 15px;
-}
-
-nav .headname {
+.sidebar-header h2 {
   font-family: 'Ma Shan Zheng', cursive;
   font-size: 24px;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.sidebar-header p {
+  font-size: 14px;
   color: #fff;
   margin-bottom: 20px;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-nav ul li {
-  margin: 20px 0;
-}
-
-nav ul li a {
+.sidebar-nav a {
   text-decoration: none;
   color: #fff;
   font-size: 18px;
   font-weight: 600;
-  display: block;
   padding: 10px 0;
-  transition: background-color 0.2s ease;
   border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-nav ul li a:hover {
+.sidebar-nav a:hover {
   background-color: #ffe380;
   color: #333;
 }
 
+/* Sidebar footer */
+.sidebar-footer {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 0.9rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
 /* --- Main Content --- */
-.main {
-  margin-left: 360px; /* leave space for sidebar */
+.main-content {
+  margin-left: 260px; /* space for sidebar */
   padding: 2rem;
 }
 
@@ -179,38 +186,42 @@ section h1 {
   border-bottom: 2px solid #2c2c2c;
 }
 
-/* Footer inside sidebar */
-.sidebar-footer {
-  position: absolute;
-  bottom: 20px;  /* distance from bottom of sidebar */
-  width: 100%;
-  text-align: center;
-  font-family: "Titillium Web", sans-serif;
-  font-size: 0.9rem;
-  color: #fff;   /* contrast with sidebar background */
-}
-
 /* --- Responsive --- */
 @media screen and (max-width: 900px) {
-  nav {
+  .sidebar {
     position: relative;
     width: 100%;
     height: auto;
     padding: 15px 0;
   }
 
-  nav img {
-    width: 120px;
-    height: 120px;
+  .sidebar-header h2 {
+    font-size: 20px;
   }
 
-  nav ul li {
-    display: inline-block;
-    margin: 0 10px;
+  .sidebar-header p {
+    font-size: 12px;
   }
 
-  .main {
+  .sidebar-nav {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .sidebar-nav a {
+    padding: 8px 10px;
+    font-size: 16px;
+  }
+
+  .main-content {
     margin-left: 0;
     padding: 1rem;
+  }
+
+  .sidebar-footer {
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
 }
