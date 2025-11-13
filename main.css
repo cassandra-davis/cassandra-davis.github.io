@@ -137,6 +137,7 @@ section h1 {
 .projects {
   width: 100%;
   padding: 2rem 0; /* match main content padding */
+  box-sizing: border-box;
 }
 
 .project-grid {
