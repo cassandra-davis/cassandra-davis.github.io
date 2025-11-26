@@ -241,6 +241,14 @@ section h1 {
   color: #5a4a00;
 }
 
+/* Add spacing for all headings */
+.project-page h1,
+.project-page h2,
+.project-page h3 {
+  margin-top: 1.5em; /* space above heading */
+  margin-bottom: 0.75em; /* space below heading */
+}
+
 .project-page img {
   display: block;
   width: 100%;
