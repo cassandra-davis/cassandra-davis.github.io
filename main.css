@@ -1,4 +1,7 @@
-/* --- Global Reset --- */
+/* =========================
+   GLOBAL RESET
+========================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -16,24 +19,25 @@ body {
   line-height: 1.6;
 }
 
-/* --- Sidebar --- */
+/* =========================
+   SIDEBAR
+========================= */
+
 .sidebar {
-  position: fixed;       /* fixed on page */
+  position: fixed;
   left: 0;
   top: 0;
   width: 250px;
   height: 100%;
-  background-color: #fff3b0; /* butter yellow */
+  background-color: #fff3b0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* push footer to bottom */
+  justify-content: space-between;
   padding: 20px 15px;
   box-shadow: 3px 0 15px rgba(0,0,0,0.1);
 }
 
-/* Sidebar header */
 .sidebar-header h2 {
-  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
   font-size: 24px;
   color: #333;
   margin-bottom: 5px;
@@ -47,14 +51,6 @@ body {
   text-align: center;
 }
 
-.roles {
-  white-space: pre-wrap;      /* allows wrapping at zero-width spaces */
-  word-break: keep-all;       /* prevents breaking words mid-word */
-  font-size: 1rem;            /* adjust as needed */
-  line-height: 1.4;           /* optional for readability */
-}
-
-/* Sidebar nav links */
 .sidebar-nav {
   display: flex;
   flex-direction: column;
@@ -72,44 +68,75 @@ body {
 }
 
 .sidebar-nav a:hover {
-  background-color: #ffe380; /* contrast hover */
-  color: #333;
+  background-color: #ffe380;
 }
 
-/* Sidebar footer */
 .sidebar-footer {
-  font-family: "Titillium Web", sans-serif;
   font-size: 0.85rem;
-  color: #333;
   text-align: center;
+  color: #333;
   margin-top: 20px;
 }
 
-/* --- Main Content --- */
+/* =========================
+   MAIN LAYOUT
+========================= */
+
 .main-content {
-  margin-left: 270px; /* leave space for sidebar */
+  margin-left: 270px;
   padding: 2rem;
 }
 
-/* --- Sections --- */
+/* =========================
+   SECTIONS
+========================= */
+
 section {
-  margin-bottom: 2rem;
-  padding: 2rem;
+  margin-bottom: 3rem;
+  padding: 2.5rem;
   background-color: #ffffff;
   border: 1px solid #ddd;
-  border-radius: 12px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.06);
 }
 
 section h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   border-left: 6px solid #fff3b0;
-  padding-left: 10px;
-  margin-bottom: 1rem;
+  padding-left: 12px;
+  margin-bottom: 1.2rem;
   color: #2c2c2c;
+  letter-spacing: -0.3px;
 }
 
-/* --- Service Boxes --- */
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  padding: 3rem;
+  background: #fffdf5;
+  border-left: 6px solid #fff3b0;
+  border-radius: 14px;
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -117,22 +144,22 @@ section h1 {
 }
 
 .service-box {
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  background-color: #fffef9;
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.08);
+  border: none;
+  border-radius: 14px;
+  padding: 1.6rem;
+  background-color: #fffdf7;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .service-box:hover {
-  transform: translateY(-3px);
-  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
 }
 
 .service-box h3 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
 }
 
 .service-box p {
@@ -140,44 +167,39 @@ section h1 {
   color: #555;
 }
 
-/* --- Project Boxes --- */
-.projects {
-  padding: 2rem;               /* same as services section */
-  background-color: #fffef9;
-  border-radius: 12px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.08);
-  margin-bottom: 2rem;
+/* =========================
+   PROJECTS
+========================= */
+
+.projects-intro {
+  margin-bottom: 1.5rem;
 }
 
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;            /* same as services */
-  padding: 0 1.5rem;
+  gap: 1.5rem;
 }
 
 .project-box {
   display: block;
-  background-color: #fffef9;
-  border: 2px solid #ffefb0;
+  background-color: #fffdf7;
+  border: 1px solid #f0e6b8;
   border-radius: 16px;
-  padding: 1.5rem;
+  padding: 1.6rem;
   text-decoration: none;
   color: #333;
-  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .project-box:hover {
-  background-color: #fff3b0;
-  transform: translateY(-4px);
-  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
 }
 
 .project-box h3 {
   font-size: 1.25rem;
-  color: #2c2c2c;
   margin-bottom: 0.75rem;
 }
 
@@ -187,33 +209,33 @@ section h1 {
   line-height: 1.6;
 }
 
-/* --- About Me Section --- */
-.about-me table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.about-me td {
-  padding: 1rem;
-  vertical-align: top;
-}
+/* =========================
+   ABOUT
+========================= */
 
 .about-me img {
   width: 220px;
   height: 220px;
   object-fit: cover;
   border-radius: 50%;
-  margin: 25px auto;
   display: block;
+  margin: 25px auto;
   border: 3px solid #fff3b0;
 }
 
-/* --- Contact Section --- */
+/* =========================
+   CONTACT
+========================= */
+
 .contact {
-  text-align: left;
   background-color: #fff3b0;
-  border-radius: 12px;
-  padding: 2rem;
+  border-radius: 14px;
+  padding: 2.5rem;
+  text-align: left;
+}
+
+.contact p {
+  margin-bottom: 1rem;
 }
 
 .contact a {
@@ -228,37 +250,9 @@ section h1 {
   border-bottom: 2px solid #2c2c2c;
 }
 
-
-/* --- Project Pages --- */
-.project-page {
-  max-width: 800px;
-  margin: 60px auto;
-  background: #fffaf0;
-  border: 2px solid #ffeb99;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.project-page h1 {
-  color: #5a4a00;
-}
-
-/* Add spacing for all headings */
-.project-page h1,
-.project-page h2,
-.project-page h3 {
-  margin-top: 1.5em; /* space above heading */
-  margin-bottom: 0.75em; /* space below heading */
-}
-
-.project-page img {
-  display: block;
-  width: 100%;
-  max-width: 600px;
-  margin: 20px auto;
-  border-radius: 12px;
-}
+/* =========================
+   BUTTONS (optional use)
+========================= */
 
 .button {
   display: inline-block;
@@ -267,17 +261,21 @@ section h1 {
   padding: 10px 18px;
   border-radius: 8px;
   text-decoration: none;
-  margin-right: 10px;
   font-weight: 600;
+  margin-right: 10px;
+  transition: background 0.2s ease;
 }
 
 .button:hover {
   background: #ffcf40;
 }
 
+/* =========================
+   RESPONSIVE
+========================= */
 
-/* --- Responsive --- */
 @media screen and (max-width: 900px) {
+
   .sidebar {
     position: relative;
     width: 100%;
@@ -285,24 +283,11 @@ section h1 {
     padding: 15px 0;
   }
 
-  .sidebar-header h2 {
-    font-size: 20px;
-  }
-
-  .sidebar-header p {
-    font-size: 12px;
-  }
-
   .sidebar-nav {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
-  }
-
-  .sidebar-nav a {
-    padding: 8px 10px;
-    font-size: 16px;
   }
 
   .main-content {
@@ -315,31 +300,6 @@ section h1 {
   }
 
   .project-grid {
-    grid-template-columns: 1fr; /* collapse to 1 column on small screens */
+    grid-template-columns: 1fr;
   }
-
-  .sidebar-footer {
-    margin-top: 20px;
-    margin-bottom: 10px;
-  }
-
-    .about-me table, 
-  .about-me tr {
-    display: block;
-  }
-
-  .about-me td {
-    width: 100%;
-    display: block;
-    padding: 0.5rem 0;
-  }
-
-  .about-me img {
-    width: 100%;       /* full width on mobile */
-    max-width: 600px;  /* optional: limit size */
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-  
 }
