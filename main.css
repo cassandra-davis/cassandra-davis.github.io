@@ -372,3 +372,27 @@ section h1 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+@media print {
+
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .button,
+  .sidebar-nav {
+    display: none;
+  }
+
+  body {
+    background: white;
+  }
+
+  section {
+    box-shadow: none;
+  }
+}
