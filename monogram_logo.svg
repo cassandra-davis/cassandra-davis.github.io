@@ -1,0 +1,13 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer C -->
+  <path d="M140 60
+           A60 60 0 1 0 140 140" fill="none" stroke="#0F172A" stroke-width="10" stroke-linecap="round"></path>
+
+  <!-- Inner D stem -->
+  <path d="M110 60
+           L110 140" stroke="#0F172A" stroke-width="10" stroke-linecap="round"></path>
+
+  <!-- D curve -->
+  <path d="M110 60
+           A40 40 0 1 1 110 140" fill="none" stroke="#0F172A" stroke-width="10" stroke-linecap="round"></path>
+</svg>
