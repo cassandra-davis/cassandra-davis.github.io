@@ -1,74 +1,94 @@
-# Cassandra Davis's Portfolio
+# Cassandra Davis — Engineering Systems & Documentation Portfolio
 
-| Senior Calibration Engineer | Data Analyst | Technical Writer |
+This is my personal portfolio website hosted via GitHub Pages.
 
-I help _teams and businesses_ turn _complex data into clear, meaningful insights through a balance of technical precision and creative design_, so they can _make smarter decisions and communicate with confidence_.
+It showcases my work in:
+- Automotive calibration and testing
+- Data analysis and Python automation
+- Engineering reporting systems
+- Technical documentation and knowledge structuring
 
----
-
-📫 **Connect with me:**  
-- [Email Me!](mailto:cassi.g.davis@gmail.com)
-- [My LinkedIn](https://www.linkedin.com/in/cassandra-davis-761877108/)  
-- [GitHub](https://github.com/cassandra-davis)  
-
----
-
-## 🔹 What I Do
-
-| 🔨 Data Analysis & Visualisation | ♻️ Process Optimisation & Automation |
-|-----------|-----------|
-|I transform raw data into clear, meaningful insights using Python and reporting tools, so that you can quickly understand patterns, make confident decisions, and drive real impact. | I streamline workflows through smart automation and data-driven improvements, so that you can save time, reduce errors, and focus on higher-value work. |
-
-| 🎯 Technical Writing & Documentation | ✂️ Design & Communication
-|-----------|-----------|
-| I create concise, user-friendly guides, tutorials, and reports, so that you can easily share knowledge, onboard new users, and keep projects running smoothly. | I blend analytical thinking with creative design to present complex information clearly, so that you can engage your audience, communicate effectively, and make data approachable. |
+The site reflects both my engineering background (6+ years in industry) and my focus on building freelance-ready services in technical documentation and process automation.
 
 ---
 
-## 🔍 Featured Projects
+## 🌐 Live Website
+[View Portfolio](https://cassandra-davis.github.io/)
 
-| [Predictive Maintenance Dashboard](#) |
-|-----------|
-| Data-driven insights for fault prediction in automotive systems. |
- Automated data collection and visualisation to improve efficiency. |
+---
 
-| [Test Automation Reporting Tool](#) |
-|-----------|
-| Automated data collection and visualisation to improve efficiency. |
-| Tools: Python, pandas, matplotlib, Power BI |
+## 🧠 Focus Areas
 
-| [Technical Writing Samples](#) |
-|-----------|
-| Clear documentation and tutorials for engineers and analysts. 
-| Tools: Python, Excel, PowerPoint automation | 
+### Engineering Background
+- Calibration & test engineering (automotive)
+- Data analysis and reporting (Python, Excel, Power BI)
+- Process optimisation and automation
+- Technical problem-solving in production environments (Bosch)
+
+### Freelance Direction
+- Technical documentation systems
+- Engineering reporting automation
+- Knowledge organisation and information structuring
+- Process improvement using Python-based tools
+
+---
+
+## 🛠 Tech Stack
+
+- HTML / CSS / JavaScript
+- Python (data analysis & automation)
+- Pandas / Matplotlib
+- Power BI / Excel automation
+- Git & GitHub Pages
+
+---
+
+## 📄 CV Export
+
+This portfolio includes a print-optimised CV version:
+- `/cv.html` → structured, recruiter-ready CV layout
+- Designed for clean PDF export and offline sharing
+
+---
+
+## 📁 Project Structure
+
+/index.html → Main portfolio site
+/cv.html → Print-optimised CV page
+/main.css → Styling (web + CV support)
+/data/cv-data.js → Central content source (single source of truth)
+/images/ → Project visuals
+/projects/ → Case study pages
 
 
 ---
 
-## 💫 About Me
+## 🎯 Purpose of This Site
 
-<table>
-  <tr>
-    <td>
-      <p><strong>Hi! My name is Cassi.</strong></p>
-      <p>I’ve been working as a Senior Calibration/Test Engineer and Data Analyst for over 6 years, helping teams turn complex data into clear, actionable insights.</p>
-      <p>I have expertise in Python analytics, process optimisation, automation, and technical communication — supporting businesses that need data clarity and efficiency.</p>
-      <p>Some of my proudest work accomplishments include:</p>
-      <ul>
-        <li>Automating data analysis workflows to save time and reduce errors</li>
-        <li>Creating visual reports that improved decision-making speed</li>
-        <li>Translating technical results into clear, user-friendly communication</li>
-      </ul>
-      <p>In my spare time, I enjoy creating handmade designs, exploring nature, and finding new ways to combine creativity with data clarity.</p>
-    </td>
-    <td>
-      <img src="https://github.com/user-attachments/assets/75e082f7-09a8-4203-b0f1-d8d5b9f724c5" alt="profile" width="600"/>
-    </td>
-  </tr>
-</table>
+This portfolio is designed to support:
+
+### 1. Freelance Work (Primary Direction)
+Helping engineering teams with:
+- Reporting automation
+- Documentation systems
+- Data clarity and process structuring
+
+### 2. Corporate Engineering Roles (Secondary)
+Supporting applications for roles in:
+- Calibration engineering
+- Data analysis
+- Technical writing and reporting
 
 ---
 
-## 🔹 Next Steps
+## 📫 Contact
 
-If you’d like to discuss your business, share a challenge, or see how we could work together, __please email me__. I’d be happy to organise a call and explore how I can help you turn complex data into clear, actionable insights.
+- Email: cassi.g.davis@gmail.com  
+- LinkedIn: https://www.linkedin.com/in/cassandra-davis-761877108  
+- GitHub: https://github.com/cassandra-davis  
+
+---
+
+## ⚖️ License
+
+Content and design © Cassandra Davis. All rights reserved.
