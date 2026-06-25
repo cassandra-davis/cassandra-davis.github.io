@@ -1,0 +1,40 @@
+<div id="cv"></div>
+
+<script>
+function renderCV() {
+  const cv = document.getElementById("cv");
+
+  cv.innerHTML = `
+    <h1>${CV_DATA.name}</h1>
+    <p>${CV_DATA.title}</p>
+
+    <h2>Profile</h2>
+    <p>${CV_DATA.summary}</p>
+
+    <h2>Skills</h2>
+    <ul>
+      ${CV_DATA.skills.map(s => `<li>${s}</li>`).join("")}
+    </ul>
+
+    <h2>Experience</h2>
+    ${CV_DATA.experience.map(e => `
+      <h3>${e.company} — ${e.role}</h3>
+      <ul>
+        ${e.points.map(p => `<li>${p}</li>`).join("")}
+      </ul>
+    `).join("")}
+
+    <h2>Projects</h2>
+    ${CV_DATA.projects.map(p => `
+      <h3>${p.title}</h3>
+      <p>${p.description}</p>
+    `).join("")}
+
+    <h2>Contact</h2>
+    <p>${CV_DATA.contact.email}</p>
+    <p>${CV_DATA.contact.linkedin}</p>
+  `;
+}
+
+renderCV();
+</script>
