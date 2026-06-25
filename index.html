@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,300 +6,263 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cassandra Davis | Engineering Systems & Documentation</title>
+
   <link rel="stylesheet" href="main.css">
+
+  <!-- PDF LIBRARY -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 
 <body>
 
-  <!-- SIDEBAR -->
+<!-- SIDEBAR -->
+<div class="sidebar">
 
-  <div class="sidebar">
-
-    <div class="sidebar-header">
-      <div class="logo">
-        <img src="monogram_logo.svg" alt="Cassandra Davis logo">
-      </div>
-
-      <h2>Cassandra Davis</h2>
-
-      <p>
-        Engineer • Analyst • Technical Communicator
-      </p>
+  <div class="sidebar-header">
+    <div class="logo">
+      <img src="monogram_logo.svg" alt="Cassandra Davis logo">
     </div>
 
-    <nav class="sidebar-nav">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#projects">Projects</a>
-      <a href="#tools">Tools</a>
-      <a href="#about-me">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <h2>Cassandra Davis</h2>
 
-    <a href="#" class="download-button" onclick="window.print()">
-      Export Portfolio (PDF)
+    <p>Engineer • Analyst • Technical Communicator</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#tools">Tools</a>
+    <a href="#about-me">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- PDF BUTTON -->
+  <a href="#" class="download-button" onclick="downloadPDF()">
+    Export Portfolio (PDF)
+  </a>
+
+  <div class="sidebar-footer">
+    <p>© 2026 Cassandra Davis</p>
+  </div>
+
+</div>
+
+<!-- EVERYTHING TO EXPORT -->
+<div id="portfolio-content">
+
+<div class="main-content">
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+  <div class="hero-content">
+
+    <div class="hero-text">
+
+      <h1>Building Clarity from Complexity</h1>
+
+      <p class="hero-subtitle">
+        Technical Documentation, Engineering Reporting Systems & Process Automation
+      </p>
+
+      <p>
+        I help engineering teams turn complex data, processes and technical knowledge into structured, usable systems.
+      </p>
+
+      <p>
+        With 6+ years in automotive calibration, testing and data analysis, I specialise in reporting automation, technical documentation and engineering information systems.
+      </p>
+
+      <div class="tags">
+        <span>Python</span>
+        <span>Automation</span>
+        <span>Technical Documentation</span>
+        <span>Reporting Systems</span>
+        <span>Data Analysis</span>
+        <span>Knowledge Management</span>
+      </div>
+
+    </div>
+
+    <div class="hero-image">
+      <img src="profile.png" alt="Cassandra Davis">
+    </div>
+
+  </div>
+
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <h2>6+</h2>
+      <p>Years Engineering Experience</p>
+    </div>
+
+    <div class="stat-card">
+      <h2>Python</h2>
+      <p>Automation & Analytics</p>
+    </div>
+
+    <div class="stat-card">
+      <h2>Bosch</h2>
+      <p>Automotive Background</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+
+  <h1>Services</h1>
+
+  <div class="services-grid">
+
+    <div class="service-box">
+      <h3>📊 Engineering Data Systems</h3>
+      <p>Transforming raw engineering data into clear reporting and decision-support systems.</p>
+    </div>
+
+    <div class="service-box">
+      <h3>⚙️ Reporting Automation</h3>
+      <p>Automating repetitive reporting workflows using Python and structured processes.</p>
+    </div>
+
+    <div class="service-box">
+      <h3>📚 Technical Documentation</h3>
+      <p>Creating clear documentation, procedures, guides and engineering knowledge resources.</p>
+    </div>
+
+    <div class="service-box">
+      <h3>🗂 Information Organisation</h3>
+      <p>Structuring technical information so teams can find, understand and reuse it effectively.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+
+  <h1>Selected Projects</h1>
+
+  <div class="project-grid">
+
+    <a href="/projects/predictive-maintenance/" class="project-box">
+      <img src="images/project-dashboard.png">
+      <h3>Predictive Maintenance Reporting System</h3>
+      <p>Developed analytics workflow to identify early fault indicators in automotive systems.</p>
     </a>
-    
-    <div class="sidebar-footer">
-      <p>© 2026 Cassandra Davis</p>
-    </div>
+
+    <a href="/projects/test-automation/" class="project-box">
+      <img src="images/project-automation.png">
+      <h3>Automated Test Reporting Tool</h3>
+      <p>Built Python-based reporting pipeline reducing manual effort.</p>
+    </a>
+
+    <a href="/projects/technical-writing/" class="project-box">
+      <img src="images/project-documentation.png">
+      <h3>Engineering Documentation System</h3>
+      <p>Structured documentation improving clarity and onboarding efficiency.</p>
+    </a>
 
   </div>
 
-  <!-- MAIN CONTENT -->
-
-  <div class="main-content">
-
-    <!-- HERO -->
-
-    <section class="hero" id="home">
-
-      <div class="hero-content">
-
-        <div class="hero-text">
-
-          <h1>
-            Building Clarity from Complexity
-          </h1>
-
-          <p class="hero-subtitle">
-            Technical Documentation, Engineering Reporting Systems & Process Automation
-          </p>
-
-          <p>
-            I help engineering teams turn complex data, processes and technical knowledge into structured, usable systems.
-          </p>
-
-          <p>
-            With 6+ years in automotive calibration, testing and data analysis, I specialise in reporting automation, technical documentation and engineering information systems.
-          </p>
-
-          <div class="tags">
-            <span>Python</span>
-            <span>Automation</span>
-            <span>Technical Documentation</span>
-            <span>Reporting Systems</span>
-            <span>Data Analysis</span>
-            <span>Knowledge Management</span>
-          </div>
-
-        </div>
-
-        <div class="hero-image">
-          <img src="profile.png" alt="Cassandra Davis">
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- STATS -->
-
-    <section class="stats-section">
-
-      <div class="stats-grid">
-
-        <div class="stat-card">
-          <h2>6+</h2>
-          <p>Years Engineering Experience</p>
-        </div>
-
-        <div class="stat-card">
-          <h2>Python</h2>
-          <p>Automation & Analytics</p>
-        </div>
-
-        <div class="stat-card">
-          <h2>Bosch</h2>
-          <p>Automotive Background</p>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- SERVICES -->
-
-    <section id="services">
-
-      <h1>Services</h1>
-
-      <div class="services-grid">
-
-        <div class="service-box">
-          <h3>📊 Engineering Data Systems</h3>
-          <p>
-            Transforming raw engineering data into clear reporting and decision-support systems.
-          </p>
-        </div>
-
-        <div class="service-box">
-          <h3>⚙️ Reporting Automation</h3>
-          <p>
-            Automating repetitive reporting workflows using Python and structured processes.
-          </p>
-        </div>
-
-        <div class="service-box">
-          <h3>📚 Technical Documentation</h3>
-          <p>
-            Creating clear documentation, procedures, guides and engineering knowledge resources.
-          </p>
-        </div>
-
-        <div class="service-box">
-          <h3>🗂 Information Organisation</h3>
-          <p>
-            Structuring technical information so teams can find, understand and reuse it effectively.
-          </p>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- PROJECTS -->
-
-    <section id="projects">
-
-      <h1>Selected Projects</h1>
-
-      <div class="project-grid">
-
-        <a href="/projects/predictive-maintenance/" class="project-box">
-
-          <img src="images/project-dashboard.png" alt="Dashboard Preview">
-
-          <h3>Predictive Maintenance Reporting System</h3>
-
-          <p>
-            Developed an analytics workflow to identify early fault indicators in automotive systems.
-          </p>
-
-          <p>
-            Supported faster engineering decisions and reduced manual interpretation.
-          </p>
-
-        </a>
-
-        <a href="/projects/test-automation/" class="project-box">
-
-          <img src="images/project-automation.png" alt="Automation Preview">
-
-          <h3>Automated Test Reporting Tool</h3>
-
-          <p>
-            Built a Python-based reporting pipeline for engineering test data.
-          </p>
-
-          <p>
-            Reduced repetitive reporting effort through automation.
-          </p>
-
-        </a>
-
-        <a href="/projects/technical-writing/" class="project-box">
-
-          <img src="images/project-documentation.png" alt="Documentation Preview">
-
-          <h3>Engineering Documentation System</h3>
-
-          <p>
-            Structured documentation for engineering methods, workflows and reporting standards.
-          </p>
-
-          <p>
-            Improved clarity, reuse and onboarding efficiency.
-          </p>
-
-        </a>
-
-      </div>
-
-    </section>
-
-    <!-- TOOLS -->
-
-    <section id="tools">
-
-      <h1>Tools & Technologies</h1>
-
-      <div class="tool-grid">
-
-        <div>Python</div>
-        <div>Pandas</div>
-        <div>Power BI</div>
-        <div>Excel</div>
-        <div>Jupyter</div>
-        <div>Markdown</div>
-        <div>Git</div>
-        <div>PowerPoint</div>
-
-      </div>
-
-    </section>
-
-    <!-- ABOUT -->
-
-    <section class="about-me" id="about-me">
-
-      <h1>About Me</h1>
-
-      <p>
-        I'm a Senior Calibration and Test Engineer with over six years of experience helping teams make better use of engineering data and information.
-      </p>
-
-      <p>
-        My work sits at the intersection of engineering, documentation, automation and communication.
-      </p>
-
-      <p>
-        I enjoy turning messy, complicated processes into clear systems that people actually enjoy using.
-      </p>
-
-      <ul>
-        <li>Automating engineering reporting workflows</li>
-        <li>Creating technical documentation and procedures</li>
-        <li>Structuring engineering knowledge and information</li>
-        <li>Translating complex data into actionable insights</li>
-      </ul>
-
-    </section>
-
-    <!-- CURRENTLY EXPLORING -->
-
-    <section>
-
-      <h1>Currently Exploring</h1>
-
-      <ul>
-        <li>Technical documentation systems</li>
-        <li>Knowledge management workflows</li>
-        <li>Indexing and information architecture</li>
-        <li>Python automation for reporting processes</li>
-      </ul>
-
-    </section>
-
-    <!-- CONTACT -->
-
-    <section class="contact" id="contact">
-
-      <h1>Let's Connect</h1>
-
-      <p>
-        I'm currently open to selected freelance projects in technical documentation, reporting systems and engineering automation.
-      </p>
-
-      <p>
-        📫 <a href="mailto:cassi.g.davis@gmail.com">Email</a> |
-        <a href="https://www.linkedin.com/in/cassandra-davis-761877108/">LinkedIn</a> |
-        <a href="https://github.com/cassandra-davis">GitHub</a>
-      </p>
-
-    </section>
-
+</section>
+
+<!-- TOOLS -->
+<section id="tools">
+
+  <h1>Tools & Technologies</h1>
+
+  <div class="tool-grid">
+    <div>Python</div>
+    <div>Pandas</div>
+    <div>Power BI</div>
+    <div>Excel</div>
+    <div>Jupyter</div>
+    <div>Markdown</div>
+    <div>Git</div>
+    <div>PowerPoint</div>
   </div>
+
+</section>
+
+<!-- ABOUT -->
+<section class="about-me" id="about-me">
+
+  <h1>About Me</h1>
+
+  <p>I'm a Senior Calibration and Test Engineer with 6+ years of experience in automotive systems, data analysis, and engineering communication.</p>
+
+  <p>I focus on building structured systems that turn engineering complexity into clarity.</p>
+
+  <ul>
+    <li>Automating reporting workflows</li>
+    <li>Creating technical documentation</li>
+    <li>Structuring engineering knowledge</li>
+    <li>Improving data usability</li>
+  </ul>
+
+</section>
+
+<!-- CURRENTLY -->
+<section>
+
+  <h1>Currently Exploring</h1>
+
+  <ul>
+    <li>Technical documentation systems</li>
+    <li>Knowledge management workflows</li>
+    <li>Information architecture</li>
+    <li>Python automation</li>
+  </ul>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+  <h1>Let's Connect</h1>
+
+  <p>Open to freelance work in engineering documentation, reporting systems, and automation.</p>
+
+  <p>
+    📫 <a href="mailto:cassi.g.davis@gmail.com">Email</a> |
+    <a href="https://www.linkedin.com/in/cassandra-davis-761877108/">LinkedIn</a> |
+    <a href="https://github.com/cassandra-davis">GitHub</a>
+  </p>
+
+</section>
+
+</div> <!-- main-content -->
+
+</div> <!-- portfolio-content -->
+
+<!-- PDF SCRIPT -->
+<script>
+function downloadPDF() {
+
+  const element = document.getElementById('portfolio-content');
+
+  const opt = {
+    margin: 0.5,
+    filename: 'Cassandra-Davis-Portfolio.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+  };
+
+  html2pdf().set(opt).from(element).save();
+}
+</script>
 
 </body>
 </html>
