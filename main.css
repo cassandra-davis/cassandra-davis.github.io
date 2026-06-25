@@ -417,3 +417,75 @@ section h1 {
     box-shadow: none;
   }
 }
+
+/* =========================
+   PDF EXPORT FIXES
+   (html2pdf.js compatibility)
+========================= */
+
+/* Background consistency for PDF */
+#portfolio-content {
+  background: #fffef9;
+}
+
+/* Prevent cards breaking across pages */
+.service-box,
+.project-box,
+.stat-card {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Ensure images scale properly in PDF */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Improve text clarity in PDF rendering */
+h1, h2, h3 {
+  color: #2c2c2c;
+}
+
+p, li {
+  color: #333;
+}
+
+/* Prevent awkward page breaks after sections */
+section {
+  break-after: auto;
+}
+
+/* Optional: improve spacing consistency in PDF */
+section {
+  margin-bottom: 3rem;
+}
+
+/* Force better print rendering in some browsers */
+html, body {
+  -webkit-print-color-adjust: exact;
+}
+
+/* Remove sidebar from PDF output (extra safety beyond JS) */
+@media print {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .button,
+  .sidebar-nav {
+    display: none;
+  }
+
+  body {
+    background: white;
+  }
+
+  section {
+    box-shadow: none;
+  }
+}
