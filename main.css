@@ -423,50 +423,99 @@ section h1 {
    (html2pdf.js compatibility)
 ========================= */
 
-/* Background consistency for PDF */
+/* Make export narrower + centered */
 #portfolio-content {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
   background: #fffef9;
 }
 
-/* Prevent cards breaking across pages */
+/* Reduce base text size for PDF density */
+body {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* Reduce heading sizes */
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+/* Reduce section padding (BIG page saver) */
+section {
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+}
+
+/* Prevent huge white gaps */
+.hero-content {
+  gap: 1.5rem;
+}
+
+/* Shrink hero image */
+.hero-image img {
+  width: 140px;
+  height: 140px;
+}
+
+/* Compress grids for PDF */
+.stats-grid {
+  gap: 0.8rem;
+}
+
+.services-grid {
+  gap: 0.8rem;
+}
+
+.project-grid {
+  gap: 0.8rem;
+}
+
+/* Make cards more compact */
 .service-box,
 .project-box,
 .stat-card {
+  padding: 1rem;
+  box-shadow: none;
+}
+
+/* Reduce tool grid spacing */
+.tool-grid {
+  gap: 6px;
+}
+
+.tool-grid div {
+  padding: 6px;
+  font-size: 0.85rem;
+}
+
+/* Fix page break issues */
+.service-box,
+.project-box,
+.stat-card,
+section {
   break-inside: avoid;
   page-break-inside: avoid;
 }
 
-/* Ensure images scale properly in PDF */
+/* Ensure no horizontal overflow */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* Improve text clarity in PDF rendering */
-h1, h2, h3 {
-  color: #2c2c2c;
-}
-
-p, li {
-  color: #333;
-}
-
-/* Prevent awkward page breaks after sections */
-section {
-  break-after: auto;
-}
-
-/* Optional: improve spacing consistency in PDF */
-section {
-  margin-bottom: 3rem;
-}
-
-/* Force better print rendering in some browsers */
-html, body {
-  -webkit-print-color-adjust: exact;
-}
-
-/* Remove sidebar from PDF output (extra safety beyond JS) */
+/* REMOVE sidebar completely in PDF */
 @media print {
   .sidebar {
     display: none;
@@ -474,18 +523,10 @@ html, body {
 
   .main-content {
     margin-left: 0;
-  }
-
-  .button,
-  .sidebar-nav {
-    display: none;
+    padding: 0.8rem;
   }
 
   body {
     background: white;
-  }
-
-  section {
-    box-shadow: none;
   }
 }
