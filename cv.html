@@ -108,6 +108,10 @@
       font-size: 11px;
     }
 
+    /* =========================
+       PRINT / PDF RULES
+    ========================= */
+
     @media print {
 
       body {
@@ -118,46 +122,48 @@
       .cv-container {
         margin: 0;
         padding: 0;
-        width: 210mm;        /* A4 width lock */
+        width: 210mm;
         max-width: 210mm;
       }
 
-      /* 🚨 CRITICAL RULE: keep sections intact */
-      .section {
+      /* prevent splitting */
+      .section,
+      .job,
+      .grid {
         break-inside: avoid !important;
         page-break-inside: avoid !important;
+      }
+
+      .section {
+        display: block;
         margin-bottom: 10px;
-        display: block;   /* ❗ REMOVE inline-block */
       }
 
-      /* keep job blocks intact */
-      .job {
-        break-inside: avoid;
-        page-break-inside: avoid;
+      /* force page break */
+      .page-break-before {
+        break-before: page !important;
+        page-break-before: always !important;
       }
 
-      /* grids should NOT control page flow */
-      .grid {
-        display: grid;
-        break-inside: avoid;
-      }
-
-      /* hide UI buttons */
+      /* hide button */
       .download-button {
         display: none !important;
       }
     }
+
   </style>
 </head>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-  
+
 <body>
 
-<a href="#" class="download-button" style="position: fixed; top: 20px; right: 20px; z-index: 999;" onclick="downloadCV()">
+<a href="#" class="download-button"
+   style="position: fixed; top: 20px; right: 20px; z-index: 999;"
+   onclick="downloadCV()">
   Download PDF
 </a>
-  
+
 <div class="cv-container" id="cv"></div>
 
 <script src="cv-data.js"></script>
@@ -218,7 +224,7 @@ function renderCV() {
       `).join("")}
     </div>
 
-    <div class="section">
+    <div class="section page-break-before">
       <h2>Achievements</h2>
       <ul>
         ${c.achievements.map(a => `
@@ -256,9 +262,6 @@ function renderCV() {
 renderCV();
 </script>
 
-</body>
-</html>
-
 <script>
 function downloadCV() {
 
@@ -274,13 +277,7 @@ function downloadCV() {
 
   html2pdf().set(opt).from(element).save();
 }
-
-// optional auto-download if opened via ?export=1
-window.addEventListener("DOMContentLoaded", () => {
-  const params = new URLSearchParams(window.location.search);
-
-  if (params.get("export") === "1") {
-    setTimeout(downloadCV, 500);
-  }
-});
 </script>
+
+</body>
+</html>
