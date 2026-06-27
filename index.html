@@ -42,7 +42,7 @@
     Export Portfolio (PDF)
   </a>
 
-  <a href="#" class="download-button" onclick="downloadCVSilent()">
+  <a href="cv.html?export=1" class="download-button">
     Download CV (PDF)
   </a>
 
@@ -260,29 +260,6 @@ function downloadPDF(elementId, filename) {
   };
 
   html2pdf().set(opt).from(element).save();
-}
-</script>
-
-<iframe id="cv-frame" src="cv.html" style="display:none;"></iframe>
-
-<script>
-function downloadCVSilent() {
-
-  const frame = document.getElementById("cv-frame");
-
-  frame.src = "cv.html"; // reload clean
-
-  frame.onload = () => {
-
-    setTimeout(() => {
-      if (frame.contentWindow && frame.contentWindow.downloadCVPDF) {
-        frame.contentWindow.downloadCVPDF();
-      } else {
-        console.error("CV function not found in iframe");
-      }
-    }, 500);
-
-  };
 }
 </script>
   
