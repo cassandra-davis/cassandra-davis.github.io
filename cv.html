@@ -118,33 +118,34 @@
       .cv-container {
         margin: 0;
         padding: 0;
-        display: block;
+        width: 210mm;        /* A4 width lock */
+        max-width: 210mm;
       }
 
-      /* 🚫 NEVER split anything inside a section */
+      /* 🚨 CRITICAL RULE: keep sections intact */
       .section {
         break-inside: avoid !important;
         page-break-inside: avoid !important;
-        /* 🔥 critical for html2pdf (Chromium behaviour) */
-        display: inline-block;
-        width: 100%;
+        margin-bottom: 10px;
+        display: block;   /* ❗ REMOVE inline-block */
       }
-        
-      /* also protect job blocks */
+
+      /* keep job blocks intact */
       .job {
         break-inside: avoid;
         page-break-inside: avoid;
       }
 
-      /* keep grids together */
+      /* grids should NOT control page flow */
       .grid {
+        display: grid;
         break-inside: avoid;
-        page-break-inside: avoid;
       }
 
-}
-
-    }
+      /* hide UI buttons */
+      .download-button {
+        display: none !important;
+      }
     }
   </style>
 </head>
