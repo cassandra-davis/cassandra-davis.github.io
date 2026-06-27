@@ -119,6 +119,14 @@
   
 <body>
 
+<a href="index.html" class="download-button" style="position: fixed; top: 20px; left: 20px; z-index: 999;">
+  ← Back to Portfolio
+</a>
+
+<a href="#" class="download-button" style="position: fixed; top: 20px; right: 20px; z-index: 999;" onclick="downloadCV()">
+  Download PDF
+</a>
+  
 <div class="cv-container" id="cv"></div>
 
 <script src="cv-data.js"></script>
@@ -221,29 +229,27 @@ renderCV();
 </html>
 
 <script>
-window.addEventListener("DOMContentLoaded", () => {
+function downloadCV() {
 
+  const element = document.getElementById("cv");
+
+  const opt = {
+    margin: 0.4,
+    filename: "Cassandra-Davis-CV.pdf",
+    image: { type: "jpeg", quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: "in", format: "a4", orientation: "portrait" }
+  };
+
+  html2pdf().set(opt).from(element).save();
+}
+
+// optional auto-download if opened via ?export=1
+window.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
 
   if (params.get("export") === "1") {
-
-    setTimeout(() => {
-
-      const element = document.getElementById("cv");
-
-      html2pdf().set({
-        margin: 0.4,
-        filename: "Cassandra-Davis-CV.pdf",
-        image: { type: "jpeg", quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: "in", format: "a4", orientation: "portrait" }
-      }).from(element).save();
-
-      // optional auto-close tab after download starts
-      setTimeout(() => window.close(), 1500);
-
-    }, 400);
+    setTimeout(downloadCV, 500);
   }
-
 });
 </script>
