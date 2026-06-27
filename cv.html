@@ -111,6 +111,39 @@
     @media print {
       body { margin: 0; }
       .cv-container { margin: 0; }
+
+
+    @media print {
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .cv-container {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* 🔥 KEY FIX: prevent section splitting */
+      .section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      /* also protect job blocks */
+      .job {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      /* keep grids together */
+      .grid {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+    }
     }
   </style>
 </head>
