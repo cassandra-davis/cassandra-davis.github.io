@@ -139,9 +139,8 @@
         margin-bottom: 10px;
       }
 
-      /* force page break */
+      /* SIMPLE FORCE PAGE BREAK */
       .page-break-before {
-        break-before: page !important;
         page-break-before: always !important;
       }
 
@@ -158,7 +157,8 @@
 
 <body>
 
-<a href="#" class="download-button"
+<a href="#"
+   class="download-button"
    style="position: fixed; top: 20px; right: 20px; z-index: 999;"
    onclick="downloadCV()">
   Download PDF
@@ -224,6 +224,7 @@ function renderCV() {
       `).join("")}
     </div>
 
+    <!-- 🔥 FORCED PAGE BREAK HERE -->
     <div class="section page-break-before">
       <h2>Achievements</h2>
       <ul>
