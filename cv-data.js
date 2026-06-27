@@ -4,30 +4,33 @@ const CV_DATA = {
     name: "Cassandra Davis",
     title: "Engineer • Analyst • Technical Communicator",
 
+    photo: "profile.png",
+
     email: "cassi.g.davis@gmail.com",
     linkedin: "https://www.linkedin.com/in/cassandra-davis-761877108/",
     github: "https://github.com/cassandra-davis",
 
     summary:
-      "Engineer with 6+ years of experience in automotive calibration, testing and data analysis, specialising in engineering reporting systems, automation and technical documentation. Focused on transforming complex engineering data into structured, usable systems."
+      "Senior Calibration and Test Engineer with 6+ years of experience in automotive engineering, data analysis, testing and validation. Specialising in engineering reporting systems, automation, technical documentation and cross-functional coordination across international teams."
   },
 
   stats: [
-    { value: "6+", label: "Years Experience" },
-    { value: "20+", label: "Automation Tools Built" },
+    { value: "6+", label: "Years Engineering Experience" },
+    { value: "20+", label: "Automation & Reporting Tools Built" },
     { value: "5+", label: "Countries Coordinated" },
-    { value: "Bosch", label: "Engineering Background" }
+    { value: "Bosch", label: "Automotive Engineering Background" }
   ],
 
   experience: [
+
     {
       company: "SAX Power GmbH",
       role: "Senior Test Engineer & Project Coordinator",
-      dates: "Mar 2025 – Present",
+      dates: "2025 – Present",
       bullets: [
-        "Leading battery software testing and validation activities",
-        "Managing project timelines, reporting and cross-functional coordination",
-        "Designing automated reporting tools and engineering workflows"
+        "Leading core battery software testing and validation activities",
+        "Managing project timelines, deliverables and cross-functional coordination",
+        "Designing automation tools and reporting workflows to improve efficiency and tracking"
       ]
     },
 
@@ -36,9 +39,10 @@ const CV_DATA = {
       role: "Senior Calibration Engineer",
       dates: "2021 – 2025",
       bullets: [
-        "Delivered calibration and testing for automotive systems",
-        "Built automation tools to improve reporting efficiency",
-        "Led cross-functional engineering coordination across departments"
+        "Delivered calibration, testing and validation for automotive systems",
+        "Designed and implemented 20+ automation tools for reporting and analysis",
+        "Led cross-functional collaboration across software, hardware and quality teams",
+        "Supported full lifecycle development from pre-production to Job#1"
       ]
     },
 
@@ -47,54 +51,72 @@ const CV_DATA = {
       role: "Graduate Engineer",
       dates: "2019 – 2021",
       bullets: [
-        "Rotational engineering programme across calibration, testing and validation",
-        "Developed early automation and data analysis tools",
-        "Supported engineering test campaigns and reporting"
+        "Rotational programme across calibration, testing and validation",
+        "Developed early automation and data analysis workflows",
+        "Supported engineering test campaigns and reporting systems"
       ]
     }
   ],
 
   achievements: [
+
     {
-      title: "Automation & Efficiency",
-      text: "Designed 20+ automation tools improving reporting, tracking and engineering workflows."
+      title: "Project Leadership & Efficiency",
+      text: "Led core project activities for confidential software, designing 20+ automation tools to improve engineering reporting, tracking and workflow efficiency."
     },
+
     {
-      title: "International Coordination",
-      text: "Led engineering activities across 5+ countries and 6+ departments."
+      title: "International Test Campaigns",
+      text: "Planned and led 2 international test campaigns including scheduling, instrumentation, resources and cross-team coordination."
     },
+
     {
-      title: "Test Campaign Leadership",
-      text: "Planned and executed 2 international test campaigns from setup to delivery."
+      title: "Risk & Quality Management",
+      text: "Led 10+ structured investigations using 8D and root cause analysis to identify risks and implement corrective actions."
     },
+
     {
-      title: "Organisational Impact",
-      text: "Delivered sustainability and internal communication initiatives reaching 5000+ employees."
+      title: "Global Engineering Coordination",
+      text: "Coordinated across 6+ departments and 5+ countries, improving communication and standardising engineering workflows."
+    },
+
+    {
+      title: "Leadership & Initiatives",
+      text: "Led sustainability communications (35+ newsletters, 5000+ employees), organised Women@Bosch events over 3+ years, and contributed to 50+ innovation ideas."
+    },
+
+    {
+      title: "Full Lifecycle Delivery",
+      text: "Managed engineering projects from pre-production to series production launch (Job#1) ensuring full milestone completion."
     }
   ],
 
   skills: {
-    engineering: [
-      "Calibration",
-      "Testing",
-      "Validation",
-      "Root Cause Analysis",
-      "FMEA",
-      "8D"
+
+    testing: [
+      "HiL Testing",
+      "Vehicle Testing",
+      "Regression Testing",
+      "Validation"
     ],
 
     tools: [
       "Python",
-      "Pandas",
-      "Excel",
-      "Power BI",
       "CANoe",
       "INCA",
       "ETAS ASCET",
       "JIRA",
       "Confluence",
-      "Git",
-      "Markdown"
+      "Excel",
+      "Power BI"
+    ],
+
+    methods: [
+      "FMEA",
+      "8D",
+      "Root Cause Analysis",
+      "Continuous Improvement",
+      "Project Planning"
     ]
   },
 
