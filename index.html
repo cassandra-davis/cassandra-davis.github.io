@@ -42,8 +42,7 @@
     Export Portfolio (PDF)
   </a>
 
-  <a href="#" class="download-button"
-     onclick="downloadPDF('cv', 'Cassandra-Davis-CV.pdf')">
+  <a href="#" class="download-button" onclick="downloadCVSilent()">
     Download CV (PDF)
   </a>
 
@@ -264,7 +263,32 @@ function downloadPDF(elementId, filename) {
 }
 </script>
 
-<script src="cv-data.js"></script>
+<iframe id="cv-frame" src="cv.html" style="display:none;"></iframe>
 
+<script>
+function downloadCVSilent() {
+
+  const frame = document.getElementById("cv-frame");
+
+  // reload iframe to ensure fresh render
+  frame.src = "cv.html?export=1&silent=1";
+
+  frame.onload = () => {
+
+    try {
+      frame.contentWindow.postMessage({
+        type: "DOWNLOAD_CV",
+        filename: "Cassandra-Davis-CV.pdf"
+      }, "*");
+
+    } catch (e) {
+      console.log("CV export failed", e);
+    }
+  };
+}
+</script>
+  
+<script src="cv-data.js"></script>
+  
 </body>
 </html>
