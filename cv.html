@@ -221,23 +221,29 @@ renderCV();
 </html>
 
 <script>
-function downloadPDF(elementId, filename) {
+window.addEventListener("DOMContentLoaded", () => {
 
-  const element = document.getElementById(elementId);
+  const params = new URLSearchParams(window.location.search);
 
-  const opt = {
-    margin: 0.4,
-    filename: filename,
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2 },
-    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
-  };
+  if (params.get("export") === "1") {
 
-  html2pdf().set(opt).from(element).save();
-}
+    setTimeout(() => {
 
-// IMPORTANT: expose function to iframe parent
-function downloadCVPDF() {
-  downloadPDF("cv", "Cassandra-Davis-CV.pdf");
-}
+      const element = document.getElementById("cv");
+
+      html2pdf().set({
+        margin: 0.4,
+        filename: "Cassandra-Davis-CV.pdf",
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: "in", format: "a4", orientation: "portrait" }
+      }).from(element).save();
+
+      // optional auto-close tab after download starts
+      setTimeout(() => window.close(), 1500);
+
+    }, 400);
+  }
+
+});
 </script>
