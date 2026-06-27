@@ -118,14 +118,18 @@
       .cv-container {
         margin: 0;
         padding: 0;
+        display: block;
       }
 
-      /* 🔥 KEY FIX: prevent section splitting */
+      /* 🚫 NEVER split anything inside a section */
       .section {
-        break-inside: avoid;
-        page-break-inside: avoid;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+        /* 🔥 critical for html2pdf (Chromium behaviour) */
+        display: inline-block;
+        width: 100%;
       }
-
+        
       /* also protect job blocks */
       .job {
         break-inside: avoid;
@@ -137,6 +141,8 @@
         break-inside: avoid;
         page-break-inside: avoid;
       }
+
+}
 
     }
     }
