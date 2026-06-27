@@ -270,20 +270,18 @@ function downloadCVSilent() {
 
   const frame = document.getElementById("cv-frame");
 
-  // reload iframe to ensure fresh render
-  frame.src = "cv.html?export=1&silent=1";
+  frame.src = "cv.html"; // reload clean
 
   frame.onload = () => {
 
-    try {
-      frame.contentWindow.postMessage({
-        type: "DOWNLOAD_CV",
-        filename: "Cassandra-Davis-CV.pdf"
-      }, "*");
+    setTimeout(() => {
+      if (frame.contentWindow && frame.contentWindow.downloadCVPDF) {
+        frame.contentWindow.downloadCVPDF();
+      } else {
+        console.error("CV function not found in iframe");
+      }
+    }, 500);
 
-    } catch (e) {
-      console.log("CV export failed", e);
-    }
   };
 }
 </script>
