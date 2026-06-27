@@ -61,15 +61,60 @@ function downloadPDF(elementId, filename) {
 
   const element = document.getElementById(elementId);
 
+  if (!element) return;
+  const mainContent = element.querySelector('.main-content');
+  const originalMargin = mainContent ? mainContent.style.marginLeft : '';
+  const originalWidth = mainContent ? mainContent.style.width : '';
+  if (mainContent) {
+    mainContent.style.marginLeft = '0';
+    mainContent.style.width = '100%';
+  }
+
   const opt = {
-    margin: 0.5,
+    margin: 0.15,
     filename: filename,
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2 },
+    image: { type: 'jpeg', quality: 0.95 },
+    html2canvas: { scale: 1, useCORS: true, scrollY: 0 },
     jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
   };
 
-  html2pdf().set(opt).from(element).save();
+  element.classList.add('pdf-export');
+  const pdfStyle = document.createElement('style');
+  pdfStyle.id = 'pdf-export-temp';
+  pdfStyle.textContent = `
+    .pdf-export { background: #ffffff !important; color: #333 !important; font-size: 0.92rem !important; width: 780px !important; max-width: 780px !important; }
+    .pdf-export .main-content { margin-left: 0 !important; padding: 1rem !important; width: 100% !important; }
+    .pdf-export section { background: #ffffff !important; box-shadow: none !important; border: 1px solid #e6e6e6 !important; border-radius: 12px !important; margin-bottom: 1rem !important; padding: 1rem !important; }
+    .pdf-export h1 { font-size: 1.8rem !important; }
+    .pdf-export h2 { font-size: 1.2rem !important; }
+    .pdf-export h3 { font-size: 1rem !important; }
+    .pdf-export p, .pdf-export li, .pdf-export span, .pdf-export a { font-size: 0.88rem !important; }
+    .pdf-export .hero-content { display: block !important; gap: 0 !important; }
+    .pdf-export .hero-image, .pdf-export .hero-text { flex: none !important; width: 100% !important; }
+    .pdf-export .hero-image img { width: 160px !important; height: 160px !important; }
+    .pdf-export .tags span { padding: 4px 8px !important; font-size: 0.8rem !important; }
+    .pdf-export .stats-grid, .pdf-export .services-grid, .pdf-export .project-grid, .pdf-export .tool-grid { grid-template-columns: 1fr !important; }
+    .pdf-export .stat-card, .pdf-export .service-box, .pdf-export .project-box, .pdf-export .tool-grid div { padding: 1rem !important; }
+    .pdf-export .project-box img { max-width: 100% !important; height: auto !important; }
+    .pdf-export .download-button, .pdf-export .sidebar, .pdf-export .sidebar-nav { display: none !important; }
+    .pdf-export .contact { background: #ffffff !important; }
+    .pdf-export .button { display: none !important; }
+    .pdf-export img { max-width: 100% !important; height: auto !important; }
+    .pdf-export h1, .pdf-export h2, .pdf-export h3, .pdf-export h4 { page-break-after: avoid; }
+    .pdf-export section { page-break-inside: avoid; }
+  `;
+  document.head.appendChild(pdfStyle);
+
+  html2pdf().set(opt).from(element).save().then(() => {
+    element.classList.remove('pdf-export');
+    if (pdfStyle && pdfStyle.parentNode) {
+      pdfStyle.parentNode.removeChild(pdfStyle);
+    }
+    if (mainContent) {
+      mainContent.style.marginLeft = originalMargin;
+      mainContent.style.width = originalWidth;
+    }
+  });
 }
 </script>
   
