@@ -1,77 +1,117 @@
 const CV_DATA = {
-  name: "Cassandra Davis",
 
-  title: "Senior Calibration Engineer • Data Analyst • Technical Documentation",
+  personal: {
+    name: "Cassandra Davis",
+    title: "Engineer • Analyst • Technical Communicator",
 
-  summary:
-    "Senior Calibration and Test Engineer with 6+ years experience in automotive systems, data analysis, reporting automation and technical documentation.",
+    email: "cassi.g.davis@gmail.com",
+    linkedin: "https://www.linkedin.com/in/cassandra-davis-761877108/",
+    github: "https://github.com/cassandra-davis",
 
-  skills: [
-    "Python automation",
-    "Data analysis",
-    "Engineering reporting systems",
-    "Technical documentation",
-    "Process optimisation"
+    summary:
+      "Engineer with 6+ years of experience in automotive calibration, testing and data analysis, specialising in engineering reporting systems, automation and technical documentation. Focused on transforming complex engineering data into structured, usable systems."
+  },
+
+  stats: [
+    { value: "6+", label: "Years Experience" },
+    { value: "20+", label: "Automation Tools Built" },
+    { value: "5+", label: "Countries Coordinated" },
+    { value: "Bosch", label: "Engineering Background" }
   ],
 
   experience: [
     {
+      company: "SAX Power GmbH",
+      role: "Senior Test Engineer & Project Coordinator",
+      dates: "Mar 2025 – Present",
+      bullets: [
+        "Leading battery software testing and validation activities",
+        "Managing project timelines, reporting and cross-functional coordination",
+        "Designing automated reporting tools and engineering workflows"
+      ]
+    },
+
+    {
       company: "Bosch",
-      role: "Senior Calibration / Test Engineer",
-      points: [
-        "Developed Python-based reporting automation",
-        "Improved calibration data analysis workflows",
-        "Created structured engineering documentation"
+      role: "Senior Calibration Engineer",
+      dates: "2021 – 2025",
+      bullets: [
+        "Delivered calibration and testing for automotive systems",
+        "Built automation tools to improve reporting efficiency",
+        "Led cross-functional engineering coordination across departments"
+      ]
+    },
+
+    {
+      company: "Bosch Graduate Programme",
+      role: "Graduate Engineer",
+      dates: "2019 – 2021",
+      bullets: [
+        "Rotational engineering programme across calibration, testing and validation",
+        "Developed early automation and data analysis tools",
+        "Supported engineering test campaigns and reporting"
       ]
     }
   ],
 
-  projects: [
+  achievements: [
     {
-      title: "Predictive Maintenance System",
-      description: "Analytics workflow identifying early fault indicators in automotive systems."
+      title: "Automation & Efficiency",
+      text: "Designed 20+ automation tools improving reporting, tracking and engineering workflows."
     },
     {
-      title: "Automated Reporting Tool",
-      description: "Python system reducing manual reporting effort."
+      title: "International Coordination",
+      text: "Led engineering activities across 5+ countries and 6+ departments."
     },
     {
-      title: "Engineering Documentation System",
-      description: "Structured documentation improving engineering knowledge sharing."
+      title: "Test Campaign Leadership",
+      text: "Planned and executed 2 international test campaigns from setup to delivery."
+    },
+    {
+      title: "Organisational Impact",
+      text: "Delivered sustainability and internal communication initiatives reaching 5000+ employees."
     }
   ],
 
-  contact: {
-    email: "cassi.g.davis@gmail.com",
-    linkedin: "linkedin.com/in/cassandra-davis-761877108",
-    github: "github.com/cassandra-davis"
-  }
-};
+  skills: {
+    engineering: [
+      "Calibration",
+      "Testing",
+      "Validation",
+      "Root Cause Analysis",
+      "FMEA",
+      "8D"
+    ],
 
-hero: {
-  name: "Cassandra Davis",
-  tagline: "Engineer • Analyst • Technical Communicator",
+    tools: [
+      "Python",
+      "Pandas",
+      "Excel",
+      "Power BI",
+      "CANoe",
+      "INCA",
+      "ETAS ASCET",
+      "JIRA",
+      "Confluence",
+      "Git",
+      "Markdown"
+    ]
+  },
 
-  headline: "Building Clarity from Complexity",
+  languages: [
+    { lang: "English", level: "Native" },
+    { lang: "Italian", level: "A2" },
+    { lang: "German", level: "A1" }
+  ],
 
-  subtitle:
-    "Technical Documentation, Engineering Reporting Systems & Process Automation",
-
-  description1:
-    "I help engineering teams turn complex data, processes and technical knowledge into structured, usable systems.",
-
-  description2:
-    "With 6+ years in automotive calibration, testing and data analysis, I specialise in reporting automation, technical documentation and engineering information systems.",
-
-  tags: [
-    "Python",
+  interests: [
+    "Technical documentation systems",
+    "Knowledge management",
+    "Information architecture",
     "Automation",
-    "Technical Documentation",
-    "Reporting Systems",
-    "Data Analysis",
-    "Knowledge Management"
+    "Creative projects"
   ]
-}
+};
 
 stats: [
   {
