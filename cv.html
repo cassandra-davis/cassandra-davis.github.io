@@ -219,3 +219,34 @@ renderCV();
 
 </body>
 </html>
+
+<script>
+function downloadPDF(elementId, filename) {
+
+  const element = document.getElementById(elementId);
+
+  const opt = {
+    margin: 0.4,
+    filename: filename,
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+  };
+
+  html2pdf().set(opt).from(element).save();
+}
+
+// Listen for message from parent page
+window.addEventListener("message", function(event) {
+
+  if (event.data?.type === "DOWNLOAD_CV") {
+
+    // small delay ensures full render
+    setTimeout(() => {
+      downloadPDF("cv", event.data.filename);
+    }, 300);
+
+  }
+
+});
+</script>
