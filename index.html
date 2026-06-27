@@ -53,197 +53,7 @@
 </div>
 
 <!-- EVERYTHING TO EXPORT -->
-<div id="portfolio-content">
-
-<div class="main-content">
-
-<!-- HERO -->
-<section class="hero" id="home">
-
-  <div class="hero-content">
-
-    <div class="hero-text">
-
-      <h1>Building Clarity from Complexity</h1>
-
-      <p class="hero-subtitle">
-        Technical Documentation, Engineering Reporting Systems & Process Automation
-      </p>
-
-      <p>
-        I help engineering teams turn complex data, processes and technical knowledge into structured, usable systems.
-      </p>
-
-      <p>
-        With 6+ years in automotive calibration, testing and data analysis, I specialise in reporting automation, technical documentation and engineering information systems.
-      </p>
-
-      <div class="tags">
-        <span>Python</span>
-        <span>Automation</span>
-        <span>Technical Documentation</span>
-        <span>Reporting Systems</span>
-        <span>Data Analysis</span>
-        <span>Knowledge Management</span>
-      </div>
-
-    </div>
-
-    <div class="hero-image">
-      <img src="profile.png" alt="Cassandra Davis">
-    </div>
-
-  </div>
-
-</section>
-
-<!-- STATS -->
-<section class="stats-section">
-
-  <div class="stats-grid">
-
-    <div class="stat-card">
-      <h2>6+</h2>
-      <p>Years Engineering Experience</p>
-    </div>
-
-    <div class="stat-card">
-      <h2>Python</h2>
-      <p>Automation & Analytics</p>
-    </div>
-
-    <div class="stat-card">
-      <h2>Bosch</h2>
-      <p>Automotive Background</p>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- SERVICES -->
-<section id="services">
-
-  <h1>Services</h1>
-
-  <div class="services-grid">
-
-    <div class="service-box">
-      <h3>📊 Engineering Data Systems</h3>
-      <p>Transforming raw engineering data into clear reporting and decision-support systems.</p>
-    </div>
-
-    <div class="service-box">
-      <h3>⚙️ Reporting Automation</h3>
-      <p>Automating repetitive reporting workflows using Python and structured processes.</p>
-    </div>
-
-    <div class="service-box">
-      <h3>📚 Technical Documentation</h3>
-      <p>Creating clear documentation, procedures, guides and engineering knowledge resources.</p>
-    </div>
-
-    <div class="service-box">
-      <h3>🗂 Information Organisation</h3>
-      <p>Structuring technical information so teams can find, understand and reuse it effectively.</p>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-
-  <h1>Selected Projects</h1>
-
-  <div class="project-grid">
-
-    <a href="./projects/predictive-maintenance/" class="project-box">
-      <img src="images/project-dashboard.png">
-      <h3>Predictive Maintenance Reporting System</h3>
-      <p>Developed analytics workflow to identify early fault indicators in automotive systems.</p>
-    </a>
-
-    <a href="./projects/test-automation/" class="project-box">
-      <img src="images/project-automation.png">
-      <h3>Automated Test Reporting Tool</h3>
-      <p>Built Python-based reporting pipeline reducing manual effort.</p>
-    </a>
-
-    <a href="./projects/technical-writing/" class="project-box">
-      <img src="images/project-documentation.png">
-      <h3>Engineering Documentation System</h3>
-      <p>Structured documentation improving clarity and onboarding efficiency.</p>
-    </a>
-
-  </div>
-
-</section>
-
-<!-- TOOLS -->
-<section id="tools">
-
-  <h1>Tools & Technologies</h1>
-
-  <div class="tool-grid">
-    <div>Python</div>
-    <div>Pandas</div>
-    <div>Power BI</div>
-    <div>Excel</div>
-    <div>Jupyter</div>
-    <div>Markdown</div>
-    <div>Git</div>
-    <div>PowerPoint</div>
-  </div>
-
-</section>
-
-<!-- ABOUT -->
-<section class="about-me" id="about-me">
-
-  <h1>About Me</h1>
-
-  <p>I'm a Senior Calibration and Test Engineer with 6+ years of experience in automotive systems, data analysis, and engineering communication.</p>
-
-  <p>I focus on building structured systems that turn engineering complexity into clarity.</p>
-
-  <ul>
-    <li>Automating reporting workflows</li>
-    <li>Creating technical documentation</li>
-    <li>Structuring engineering knowledge</li>
-    <li>Improving data usability</li>
-  </ul>
-
-  <h2>Currently Exploring</h2>
-
-  <ul>
-    <li>Technical documentation systems</li>
-    <li>Knowledge management workflows</li>
-    <li>Information architecture</li>
-    <li>Python automation</li>
-  </ul>
-
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-
-  <h1>Let's Connect</h1>
-
-  <p>Open to freelance work in engineering documentation, reporting systems, and automation.</p>
-
-  <p>
-    📫 <a href="mailto:cassi.g.davis@gmail.com">Email</a> |
-    <a href="https://www.linkedin.com/in/cassandra-davis-761877108/">LinkedIn</a> |
-    <a href="https://github.com/cassandra-davis">GitHub</a>
-  </p>
-
-</section>
-
-</div> <!-- main-content -->
-
-</div> <!-- portfolio-content -->
+<div id="portfolio-content"></div>
 
 <!-- PDF SCRIPT -->
 <script>
@@ -264,6 +74,85 @@ function downloadPDF(elementId, filename) {
 </script>
   
 <script src="cv-data.js"></script>
-  
+
+<script>
+function renderPortfolio() {
+  const c = window.CV_DATA || (typeof CV_DATA !== 'undefined' ? CV_DATA : null);
+  if (!c) { console.warn('CV_DATA not found'); return; }
+  const container = document.getElementById('portfolio-content');
+  if (!container) return;
+  const skills = c.skills || {};
+  const hero = c.hero || {};
+  const tags = (hero.tags && hero.tags.length) ? hero.tags.slice(0,6) : ((skills.tools && skills.tools.length) ? skills.tools.slice(0, 6) : (c.interests || []).slice(0, 6));
+  const statsHtml = (c.stats_portfolio || c.stats || []).map(s => `<div class="stat-card"><h2>${s.value}</h2><p>${s.label}</p></div>`).join('');
+  const servicesHtml = (c.services || []).map(sv => `<div class="service-box"><h3>${sv.title}</h3><p>${sv.text}</p></div>`).join('');
+  const projectsHtml = (c.projects || []).map(pr => `
+      <a href="${pr.link || '#'}" class="project-box">
+        ${pr.image ? `<img src="${pr.image}" alt="${pr.title}">` : ''}
+        <h3>${pr.title}</h3>
+        <p>${pr.text}</p>
+      </a>
+    `).join('');
+  const toolsHtml = (skills.tools || []).map(t => `<div>${t}</div>`).join('');
+  const aboutMethods = (skills.methods || []).map(m => `<li>${m}</li>`).join('');
+  const interestsHtml = (c.interests || []).map(i => `<li>${i}</li>`).join('');
+
+  container.innerHTML = `
+    <div class="main-content">
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>${hero.headline || 'Building Clarity from Complexity'}</h1>
+            <p class="hero-subtitle">${hero.subtitle || c.personal.title || ''}</p>
+            ${ (hero.paragraphs || []).map(p => `<p>${p}</p>`).join('') }
+            <div class="tags">${tags.map(t => `<span>${t}</span>`).join('')}</div>
+          </div>
+          <div class="hero-image">
+            <img src="${c.personal.photo || 'profile.png'}" alt="${c.personal.name}">
+          </div>
+        </div>
+      </section>
+      <section class="stats-section">
+        <div class="stats-grid">${statsHtml}</div>
+      </section>
+      <section id="services">
+        <h1>Services</h1>
+        <div class="services-grid">${servicesHtml}</div>
+      </section>
+      <section id="projects">
+        <h1>Selected Projects</h1>
+        <div class="project-grid">${projectsHtml}</div>
+      </section>
+      <section id="tools">
+        <h1>Tools & Technologies</h1>
+        <div class="tool-grid">${toolsHtml}</div>
+      </section>
+      <section class="about-me" id="about-me">
+        <h1>${(c.about_portfolio && c.about_portfolio.heading) || 'About Me'}</h1>
+        ${ (c.about_portfolio && c.about_portfolio.paragraphs ? c.about_portfolio.paragraphs.map(p => `<p>${p}</p>`).join('') : `<p>${c.personal.summary || ''}</p><p>I focus on building structured systems that turn engineering complexity into clarity.</p>` ) }
+        <ul>
+          ${ (c.about_portfolio && c.about_portfolio.bullets ? c.about_portfolio.bullets.map(b => `<li>${b}</li>`).join('') : aboutMethods) }
+        </ul>
+        <h2>Currently Exploring</h2>
+        <ul>
+          ${ (c.about_portfolio && c.about_portfolio.exploring ? c.about_portfolio.exploring.map(i => `<li>${i}</li>`).join('') : interestsHtml) }
+        </ul>
+      </section>
+      <section class="contact" id="contact">
+        <h1>Let's Connect</h1>
+        <p>Open to freelance work in engineering documentation, reporting systems, and automation.</p>
+        <p>📫 <a href="mailto:${c.personal.email}">Email</a> | <a href="${c.personal.linkedin}">LinkedIn</a> | <a href="${c.personal.github}">GitHub</a></p>
+      </section>
+    </div>
+  `;
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', renderPortfolio);
+} else {
+  renderPortfolio();
+}
+</script>
+
 </body>
 </html>
