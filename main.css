@@ -289,6 +289,16 @@ section h1 {
   margin-bottom: 1rem;
 }
 
+.project-page {
+    max-width: 900px;
+    margin: 2rem auto;
+}
+
+.project-page h3 {
+    margin: 0.9rem 0 0.4rem;
+}
+
+
 /* =========================
    TOOLS GRID
 ========================= */
