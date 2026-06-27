@@ -37,12 +37,14 @@
   </nav>
 
   <!-- PDF BUTTON -->
-  <a href="#" class="download-button" onclick="downloadPDF()">
+  <a href="#" class="download-button"
+     onclick="downloadPDF('portfolio-content', 'Cassandra-Davis-Portfolio.pdf')">
     Export Portfolio (PDF)
   </a>
 
-  <a href="cv.html" class="download-button">
-    View CV (Print Version)
+  <a href="#" class="download-button"
+     onclick="downloadPDF('cv', 'Cassandra-Davis-CV.pdf')">
+    Download CV (PDF)
   </a>
 
   <div class="sidebar-footer">
@@ -246,13 +248,13 @@
 
 <!-- PDF SCRIPT -->
 <script>
-function downloadPDF() {
+function downloadPDF(elementId, filename) {
 
-  const element = document.getElementById('portfolio-content');
+  const element = document.getElementById(elementId);
 
   const opt = {
     margin: 0.5,
-    filename: 'Cassandra-Davis-Portfolio.pdf',
+    filename: filename,
     image: { type: 'jpeg', quality: 0.98 },
     html2canvas: { scale: 2 },
     jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
