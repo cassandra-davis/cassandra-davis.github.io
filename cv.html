@@ -236,17 +236,8 @@ function downloadPDF(elementId, filename) {
   html2pdf().set(opt).from(element).save();
 }
 
-// Listen for message from parent page
-window.addEventListener("message", function(event) {
-
-  if (event.data?.type === "DOWNLOAD_CV") {
-
-    // small delay ensures full render
-    setTimeout(() => {
-      downloadPDF("cv", event.data.filename);
-    }, 300);
-
-  }
-
-});
+// IMPORTANT: expose function to iframe parent
+function downloadCVPDF() {
+  downloadPDF("cv", "Cassandra-Davis-CV.pdf");
+}
 </script>
