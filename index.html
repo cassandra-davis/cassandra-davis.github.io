@@ -87,7 +87,7 @@ function renderPortfolio() {
   const statsHtml = (c.stats_portfolio || c.stats || []).map(s => `<div class="stat-card"><h2>${s.value}</h2><p>${s.label}</p></div>`).join('');
   const servicesHtml = (c.services || []).map(sv => `<div class="service-box"><h3>${sv.title}</h3><p>${sv.text}</p></div>`).join('');
   const projectsHtml = (c.projects || []).map(pr => `
-      <a href="${pr.link || '#'}" class="project-box">
+      <a href="${pr.link || '#'}" class="project-box" target="${pr.link && pr.link.startsWith('http') ? '_blank' : ''}">
         ${pr.image ? `<img src="${pr.image}" alt="${pr.title}">` : ''}
         <h3>${pr.title}</h3>
         <p>${pr.text}</p>

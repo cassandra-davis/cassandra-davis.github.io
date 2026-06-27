@@ -201,19 +201,19 @@ var CV_DATA = {
     {
       title: "Predictive Maintenance Reporting System",
       image: "images/project-dashboard.png",
-      link: "/projects/predictive-maintenance/",
+      link: "projects/predictive-maintenance/",
       text: "Developed analytics workflow to identify early fault indicators in automotive systems."
     },
     {
       title: "Automated Test Reporting Tool",
       image: "images/project-automation.png",
-      link: "/projects/test-automation/",
+      link: "projects/test-automation/",
       text: "Built Python-based reporting pipeline reducing manual effort."
     },
     {
       title: "Engineering Documentation System",
       image: "images/project-documentation.png",
-      link: "/projects/technical-writing/",
+      link: "projects/technical-writing/",
       text: "Structured documentation improving clarity and onboarding efficiency."
     }
   ]
