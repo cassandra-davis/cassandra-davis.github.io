@@ -1,0 +1,31 @@
+project:
+  name: Predictive Maintenance Reporting System
+
+customer: Fictional Automotive OEM
+
+report_id: PMR-001
+
+document_owner: Cassandra Davis
+
+system:
+  vehicle: Electric Vehicle Prototype
+  ecu: ECU-04
+  software_version: 3.2.4
+  sensor: Cooling Temperature Sensor
+  sampling_rate_hz: 100
+
+test:
+  location: Validation Laboratory
+  duration_minutes: 15
+  operator: Engineering Validation Team
+  objective: >
+    Assess sensor behaviour during increasing thermal load
+    and automatically generate engineering reports.
+
+data:
+  samples: 30
+  source: Simulated validation dataset
+
+status:
+  report: Final
+  approval: Approved

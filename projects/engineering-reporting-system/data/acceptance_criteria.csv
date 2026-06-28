@@ -1,0 +1,8 @@
+metric,minimum,maximum,target,status
+Temperature,-40,95,Normal Range,Pass
+Pressure,100,108,Stable,Pass
+Voltage,4.90,5.05,±0.05V Drift,Pass
+Current,0.45,1.60,Expected Operating Range,Pass
+Sensor Noise,0.000,0.045,<0.050 RMS,Pass
+Missing Values,0,0,None,Pass
+Processing Time,0,30,<30 Seconds,Pass
