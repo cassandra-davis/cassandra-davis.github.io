@@ -1,0 +1,343 @@
+---
+title: "Engineering Validation Report"
+subtitle: "Predictive Maintenance Reporting System"
+author: "Cassandra Davis"
+date: today
+
+execute:
+  echo: false
+  warning: false
+  message: false
+
+project:
+  output-dir: output
+---
+
+```{python}
+from datetime import date
+
+report_date = date.today()
+```
+
+# Executive Summary
+
+## Objective
+
+Develop an automated engineering reporting workflow capable of identifying early fault indicators within vehicle sensor data and presenting the results in a standardised engineering report.
+
+## Scope
+
+The reporting system analyses validation data collected during endurance testing and generates:
+
+* KPI summaries
+* engineering charts
+* anomaly detection
+* recommendations
+* standardised documentation
+
+## Overall Result
+
+**PASS**
+
+The reporting workflow successfully identified abnormal sensor trends while reducing manual reporting effort.
+
+---
+
+# Project Information
+
+```{python}
+from datetime import date
+import pandas as pd
+
+meta = pd.DataFrame([
+    ["Project", "Predictive Maintenance Reporting System"],
+    ["Customer", "Fictional Automotive OEM"],
+    ["Report ID", "PMR-001"],
+    ["Version", "1.0"],
+    ["Author", "Cassandra Davis"],
+    ["Status", "Final"],
+    ["Date", date.today()]
+], columns=["Item", "Value"])
+
+meta.style.hide(axis="index")
+```
+
+---
+
+# Engineering Background
+
+Modern vehicle testing generates thousands of sensor measurements every minute.
+
+Manual review is:
+
+* time consuming
+* inconsistent
+* difficult to reproduce
+
+This reporting system demonstrates how Python automation can transform raw engineering data into clear decision-making information.
+
+---
+
+# Test Configuration
+
+| Parameter        | Value        |
+| ---------------- | ------------ |
+| Vehicle Platform | Prototype EV |
+| ECU Version      | 3.2.4        |
+| Sampling Rate    | 100 Hz       |
+| Test Duration    | 6 Hours      |
+| Total Samples    | 14,562       |
+
+---
+
+# Acceptance Criteria
+
+| Requirement       | Target      |
+| ----------------- | ----------- |
+| Missing Data      | <1%         |
+| Sensor Drift      | <2%         |
+| Voltage Stability | ±0.05 V     |
+| Processing Time   | <30 seconds |
+
+---
+
+# Dataset Overview
+
+```{python}
+from scripts.load_data import load_data
+
+df = load_data()
+
+df.head()
+```
+
+---
+
+# Dataset Summary
+
+```{python}
+df.describe()
+```
+
+---
+
+# Missing Data Analysis
+
+```{python}
+df.isna().sum()
+```
+
+---
+
+# Temperature Profile
+
+```{python}
+from scripts.plots import temperature_plot
+
+temperature_plot(df)
+```
+
+---
+
+# Voltage Stability
+
+```{python}
+from scripts.plots import voltage_plot
+
+voltage_plot(df)
+```
+
+---
+
+# Pressure Trend
+
+```{python}
+from scripts.plots import pressure_plot
+
+pressure_plot(df)
+```
+
+---
+
+# Statistical Summary
+
+```{python}
+from scripts.analyse import summary
+
+summary(df)
+```
+
+---
+
+# Key Performance Indicators
+
+| KPI                 |    Result |
+| ------------------- | --------: |
+| Maximum Temperature |      90°C |
+| Average Temperature |      56°C |
+| Maximum Pressure    | 104.2 kPa |
+| Voltage Drift       |    0.06 V |
+| Missing Samples     |         0 |
+
+---
+
+# Engineering Findings
+
+## Observation 1
+
+Temperature increased steadily throughout the endurance cycle without exceeding allowable limits.
+
+---
+
+## Observation 2
+
+Voltage remained stable with only minor drift occurring during peak operating temperatures.
+
+---
+
+## Observation 3
+
+Pressure values followed expected system behaviour with no abnormal spikes.
+
+---
+
+## Observation 4
+
+No sensor dropout events occurred.
+
+---
+
+# Risk Assessment
+
+| Risk                    | Severity | Status        |
+| ----------------------- | -------- | ------------- |
+| Sensor drift            | Low      | Monitor       |
+| Data loss               | Low      | None observed |
+| Pressure instability    | Low      | Acceptable    |
+| ECU communication fault | Low      | None observed |
+
+---
+
+# Recommendations
+
+The following improvements are recommended:
+
+* Continue monitoring voltage stability during hot weather testing.
+* Increase validation duration to include longer endurance cycles.
+* Add automatic fault classification.
+* Integrate dashboard reporting into Power BI.
+* Schedule automated report generation after each validation run.
+
+---
+
+# Benefits
+
+The automated reporting workflow provides:
+
+* reduced manual effort
+* repeatable reporting
+* standardised engineering documentation
+* improved traceability
+* faster engineering decision making
+
+---
+
+# Deliverables
+
+This project includes:
+
+* Python data processing scripts
+* Automated charts
+* Engineering report template
+* Sample dataset
+* Documentation standards
+* Workflow documentation
+
+---
+
+# Skills Demonstrated
+
+* Engineering reporting
+* Python automation
+* Data analysis
+* Technical writing
+* Process optimisation
+* Engineering documentation
+* KPI reporting
+* Data visualisation
+
+---
+
+# Future Improvements
+
+Potential enhancements include:
+
+* Machine learning anomaly detection
+* Live dashboard integration
+* SQL database connectivity
+* Automatic email distribution
+* Multi-project reporting
+
+---
+
+# Revision History
+
+| Version | Date       | Description               |
+| ------- | ---------- | ------------------------- |
+| 1.0     | 2026-06-28 | Initial portfolio release |
+
+---
+
+# Appendix A — Sample Data
+
+```{python}
+df.tail()
+```
+
+---
+
+# Appendix B — Report Workflow
+
+```text
+Raw Test Data
+      │
+      ▼
+Import Data
+      │
+      ▼
+Validation
+      │
+      ▼
+Cleaning
+      │
+      ▼
+Statistical Analysis
+      │
+      ▼
+Chart Generation
+      │
+      ▼
+Engineering Assessment
+      │
+      ▼
+Automatic Report Generation
+      │
+      ▼
+HTML / PDF / DOCX Output
+```
+
+---
+
+# Appendix C — Folder Structure
+
+```text
+engineering-reporting-system/
+
+├── report.qmd
+├── _quarto.yml
+├── data/
+├── scripts/
+├── templates/
+├── images/
+└── output/
+```
