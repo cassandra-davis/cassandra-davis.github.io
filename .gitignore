@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Quarto / reporting
+.quarto/
+project-cache/
+report_files/
+output/
+_freeze/
+.jupyter_cache/
+*.tex
