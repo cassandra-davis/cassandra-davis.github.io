@@ -197,6 +197,7 @@ var CV_DATA = {
     }
   ],
 
+  /*
   projects: [
     {
       title: "Predictive Maintenance Reporting System",
@@ -215,6 +216,28 @@ var CV_DATA = {
       image: "images/project-documentation.png",
       link: "projects/technical-writing/",
       text: "Structured documentation improving clarity and onboarding efficiency."
+    }
+  ]
+    */
+
+  projects: [
+    {
+      title: "Engineering Reporting System Design",
+      image: "images/project-reporting-system.png",
+      link: "projects/engineering-reporting-system/",
+      text: "Designed a standardised engineering reporting framework to improve clarity, consistency, and decision-making across technical teams."
+    },
+    {
+      title: "Technical Documentation Improvement",
+      image: "images/project-documentation.png",
+      link: "projects/technical-documentation-improvement/",
+      text: "Improved engineering documentation structure and readability through standardisation, rewriting, and information design."
+    },
+    {
+      title: "Engineering Procedure & Systems Design",
+      image: "images/project-procedures.png",
+      link: "projects/engineering-procedure-systems-design/",
+      text: "Developed structured engineering workflows and procedures to improve consistency, repeatability, and knowledge transfer."
     }
   ]
 
