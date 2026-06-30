@@ -1,0 +1,252 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% ============================================================================
+% PACKAGES REQUIRED BY QUARTO-GENERATED BODY CONTENT
+% These are normally provided by Pandoc's default template. Because we supply
+% our own template, we MUST declare them or the body fails to compile.
+% ============================================================================
+\usepackage{longtable}   % Pandoc emits all pipe/grid tables as longtable
+\usepackage{booktabs}    % \toprule \midrule \bottomrule used in every table
+\usepackage{array}       % column specs (>{...}) used by Pandoc table widths
+\usepackage{calc}        % \real{...} proportional column widths in tables
+\usepackage{etoolbox}    % \pandocbounded and other Quarto helper macros
+\usepackage{fancyvrb}    % Verbatim env used by code blocks / Python output
+\usepackage{framed}      % "Shaded" environment that wraps highlighted code
+\usepackage{upquote}     % straight quotes in verbatim/code (correct copy-paste)
+\usepackage{amsmath}     % math mode used by stats output and avoids "Missing $"
+\usepackage{amssymb}     % math symbols referenced by some Pandoc output
+\usepackage[normalem]{ulem} % \uline etc. used by strikethrough/underline
+
+\usepackage[table]{xcolor}
+\arrayrulecolor{white}
+
+% ============================================================================
+% PAGE GEOMETRY (unchanged)
+% ============================================================================
+
+\usepackage[
+top=60mm,
+bottom=30mm,
+left=25mm,
+right=25mm,
+headheight=110pt,
+headsep=50pt
+]{geometry}
+
+\setlength{\topskip}{15pt}
+
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{lastpage}
+
+% ----------------------------------------------------------------------------
+% hyperref should be loaded late; Pandoc relies on it for \href, \url, TOC
+% links and \toclabel/\hypertarget anchors in the generated body.
+% ----------------------------------------------------------------------------
+\usepackage{hyperref}
+
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% ----------------------------------------------------------------------------
+% Your "section starts on new page" rule. Kept exactly, but using \cleardoublepage
+% safe variant. (Unchanged behaviour.)
+% ----------------------------------------------------------------------------
+\let\oldsection\section
+\renewcommand{\section}{\clearpage\oldsection}
+
+% ----------------------------------------------------------------------------
+% \tightlist is emitted by Pandoc for compact lists. REQUIRED.
+% ----------------------------------------------------------------------------
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}%
+}
+
+% ----------------------------------------------------------------------------
+% Quarto/Pandoc helper macros the body may reference. Guarded with
+% \providecommand so they are harmless if a future Pandoc defines them too.
+% ----------------------------------------------------------------------------
+\providecommand{\passthrough}[1]{#1}          % inline \passthrough{\texttt{...}}
+\providecommand{\pandocbounded}[1]{#1}        % image-size guard in newer Pandoc
+% (Removed the \@ifundefined{Shaded}{}{} line — it was a no-op AND the bare
+%  braces confuse Quarto's template parser, causing the "unexpected" error.)
+
+% ============================================================================
+% SYNTAX HIGHLIGHTING MACROS (CRITICAL FOR CODE BLOCKS / PYTHON OUTPUT)
+% Pandoc generates \KeywordTok, \CommentTok, the Shaded + Highlighting
+% environments, etc. This single hook injects all of them. Without it, every
+% ```{python}``` block triggers "environment Highlighting undefined".
+% ============================================================================
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+% ============================================================================
+% PASS-THROUGH HOOKS so YAML header-includes / includes still work.
+% Lets you add packages later via _quarto.yml without editing this file.
+% ============================================================================
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+$for(include-before)$
+$include-before$
+$endfor$
+
+% ============================================================================
+% HEADER MACRO (unchanged)
+% ============================================================================
+
+\newcommand{\standardheadergrid}{%
+\begin{minipage}{\textwidth}
+
+\hfill\raisebox{-0.2\height}{\includegraphics[height=60pt]{monogram_logo.png}}
+
+\vspace{12pt}
+
+\footnotesize\sffamily
+\arrayrulecolor{white}
+
+\begin{tabularx}{\textwidth}{@{} |l|X|l|l| @{}}
+    \hline
+    From & Reference & Tel & $location$ \\
+    {\normalsize $department$} & {\normalsize $author$} & {\normalsize $tel$} & {\normalsize $date$} \\
+    \hline
+\end{tabularx}
+
+\vspace{4pt}
+
+Report
+
+\vspace{4pt}
+
+\begin{tabularx}{\textwidth}{@{} |l|X|l|l| @{}}
+    \hline
+    ID & $document-id$ & Version & $version$ \\
+    \hline
+    Title & $title$ & & \\
+    \hline
+\end{tabularx}
+
+\end{minipage}%
+}
+
+% ============================================================================
+% FIRST PAGE HEADER (unchanged)
+% ============================================================================
+
+\newcommand{\firstpageheadergrid}{%
+\begin{minipage}{\textwidth}
+
+\hfill\raisebox{-0.2\height}{\includegraphics[height=60pt]{monogram_logo.png}}
+
+\vspace{12pt}
+
+\footnotesize\sffamily
+\arrayrulecolor{white}
+
+\begin{tabularx}{\textwidth}{@{} |l|X|l|l| @{}}
+    \hline
+    From & Reference & Tel & $location$ \\
+    {\normalsize $department$} & {\normalsize $author$} & {\normalsize $tel$} & {\normalsize $date$} \\
+    \hline
+\end{tabularx}
+
+\vspace{10pt}
+
+{\large\bfseries Report}
+
+\vspace{10pt}
+
+\begin{tabularx}{\textwidth}{@{} |l|X|l|l| @{}}
+    \hline
+    ID & {\large $document-id$} & Version & {\large $version$} \\
+    \hline
+    Title & {\large\bfseries $title$} & & \\
+    \hline
+    Description & {\large $subtitle$} & & \\
+    \hline
+\end{tabularx}
+
+\end{minipage}%
+}
+
+% ============================================================================
+% FOOTER (unchanged)
+% ============================================================================
+
+\newcommand{\documentfooter}{%
+\textbf{\textcolor{red}{Confidential}}%
+}
+
+% ============================================================================
+% PAGE STYLE (unchanged)
+% ============================================================================
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[C]{\standardheadergrid}
+
+\fancyfoot[L]{\small\sffamily \documentfooter}
+\fancyfoot[C]{\small\sffamily $document-id$ -- $title$ -- v$version$}
+\fancyfoot[R]{\small\sffamily Page \thepage\ of \pageref{LastPage}}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\fancypagestyle{firstpage}{
+\fancyhf{}
+\fancyhead[C]{\firstpageheadergrid}
+
+\fancyfoot[L]{\small\sffamily \documentfooter}
+\fancyfoot[C]{\small\sffamily $document-id$ -- $title$ -- v$version$}
+\fancyfoot[R]{\small\sffamily Page \thepage\ of \pageref{LastPage}}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+}
+
+% ============================================================================
+% BODY
+% ============================================================================
+
+\begin{document}
+
+\thispagestyle{firstpage}
+
+% ----------------------------------------------------------------------------
+% Table of contents. Pandoc passes $toc$ (boolean) and $toc-title$.
+% Using Pandoc's own \tableofcontents respects number-sections + toc-depth.
+% ----------------------------------------------------------------------------
+$if(toc)$
+{
+$if(colorlinks)$
+\hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
+$endif$
+\setcounter{tocdepth}{$toc-depth$}
+\tableofcontents
+}
+\newpage
+$endif$
+
+% ----------------------------------------------------------------------------
+% THE MISSING PIECE: this is where Quarto injects your rendered report.
+% Your original template had no $body$, so the content had nowhere to go.
+% ----------------------------------------------------------------------------
+$body$
+
+% ----------------------------------------------------------------------------
+% Bibliography / CSL references hook (harmless if you never cite anything).
+% Pandoc emits the CSLReferences environment here when citations are present.
+% ----------------------------------------------------------------------------
+$if(has-chapter-start)$$endif$
+$for(include-after)$
+$include-after$
+$endfor$
+
+\end{document}

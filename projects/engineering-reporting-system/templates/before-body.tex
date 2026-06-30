@@ -1,0 +1,21 @@
+% ============================================================================
+% before-body partial — IS parsed as a Quarto template, so $variables$ work.
+% ============================================================================
+
+\renewcommand{\metaTitle}{$title$}
+$if(subtitle)$\renewcommand{\metaSubtitle}{$subtitle$}$endif$
+$if(author)$\renewcommand{\metaAuthor}{$for(author)$$author$$sep$, $endfor$}$endif$
+$if(date)$\renewcommand{\metaDate}{$date$}$endif$
+$if(version)$\renewcommand{\metaVersion}{$version$}$endif$
+$if(document-id)$\renewcommand{\metaDocId}{$document-id$}$endif$
+$if(department)$\renewcommand{\metaDepartment}{$department$}$endif$
+$if(tel)$\renewcommand{\metaTel}{$tel$}$endif$
+$if(location)$\renewcommand{\metaLocation}{$location$}$endif$
+
+% ----------------------------------------------------------------------------
+% PAGE 1 = TITLE PAGE
+% ----------------------------------------------------------------------------
+\thispagestyle{firstpage}
+\titleblock
+\clearpage
+\setcounter{page}{1}

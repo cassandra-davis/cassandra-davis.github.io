@@ -1,0 +1,206 @@
+% ============================================================================
+% ENGINEERING REPORT — BRANDING PREAMBLE (Option A: include-in-header)
+% This file is NOT parsed as a Quarto template, so raw LaTeX (braces, \@...)
+% is safe here. Variable values (\metaTitle, \metaAuthor, etc.) are provided
+% by before-body.tex via \renewcommand — see that file.
+% Quarto already loads: longtable, booktabs, array, calc, graphicx, hyperref,
+% the syntax-highlighting macros, \tightlist, \passthrough, \pandocbounded.
+% We therefore only declare packages specific to OUR layout.
+% ============================================================================
+
+\usepackage[table]{xcolor}
+\arrayrulecolor{white}
+
+% ============================================================================
+% FONT — TRUE ARIAL FOR EVERYTHING (requires pdf-engine: xelatex)
+% fontspec loads the real system font. Setting BOTH the main and sans families
+% to Arial means body text, headings, and any \sffamily (your headers/footers)
+% all render in Arial. \familydefault is left as the default; fontspec handles
+% the mapping, so no \renewcommand override is needed.
+% ============================================================================
+\usepackage{fontspec}
+\setmainfont{Arial}
+\setsansfont{Arial}
+\setmonofont{Courier New}   % monospace for code/Python output (any mono is fine)
+
+% ----------------------------------------------------------------------------
+% Resolve the logo by filename from the templates/ folder (and project root).
+% ----------------------------------------------------------------------------
+\graphicspath{{templates/}{./}}
+
+% ----------------------------------------------------------------------------
+% PAGE GEOMETRY (unchanged from your design)
+% ----------------------------------------------------------------------------
+\usepackage[
+top=60mm,
+bottom=30mm,
+left=25mm,
+right=25mm,
+headheight=110pt,
+headsep=50pt
+]{geometry}
+
+\setlength{\topskip}{15pt}
+
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{lastpage}
+
+% ----------------------------------------------------------------------------
+% Section starts on a new page (your rule, unchanged)
+% ----------------------------------------------------------------------------
+\let\oldsection\section
+\renewcommand{\section}{\clearpage\oldsection}
+
+% ============================================================================
+% Fallback definitions for the metadata commands.
+% before-body.tex redefines these with the real Quarto values. Defining them
+% here too means the preamble compiles even if a value is absent.
+% ============================================================================
+\providecommand{\metaTitle}{}
+\providecommand{\metaSubtitle}{}
+\providecommand{\metaAuthor}{}
+\providecommand{\metaDate}{}
+\providecommand{\metaVersion}{}
+\providecommand{\metaDocId}{}
+\providecommand{\metaDepartment}{}
+\providecommand{\metaTel}{}
+\providecommand{\metaLocation}{}
+
+% ============================================================================
+% STANDARD (non-first) PAGE HEADER
+% ============================================================================
+\newcommand{\standardheadergrid}{%
+\begin{minipage}{\textwidth}
+
+\hfill\raisebox{-0.2\height}{\includegraphics[height=60pt]{monogram_logo.png}}
+
+\vspace{12pt}
+
+\footnotesize\sffamily
+\arrayrulecolor{white}
+
+\begin{tabularx}{\textwidth}{@{} |l|X|l|l| @{}}
+    \hline
+    From & Reference & Tel & \metaLocation \\
+    {\normalsize \metaDepartment} & {\normalsize \metaAuthor} & {\normalsize \metaTel} & {\normalsize \metaDate} \\
+    \hline
+\end{tabularx}
+
+\vspace{4pt}
+
+Report
+
+\vspace{4pt}
+
+\begin{tabularx}{\textwidth}{@{} |l|X|l|l| @{}}
+    \hline
+    ID & \metaDocId & Version & \metaVersion \\
+    \hline
+    Title & \metaTitle & & \\
+    \hline
+\end{tabularx}
+
+\end{minipage}%
+}
+
+% ============================================================================
+% FIRST PAGE HEADER (branded band at the top of the title page)
+% ============================================================================
+\newcommand{\firstpageheadergrid}{%
+\begin{minipage}{\textwidth}
+
+\hfill\raisebox{-0.2\height}{\includegraphics[height=60pt]{monogram_logo.png}}
+
+\vspace{12pt}
+
+\footnotesize\sffamily
+\arrayrulecolor{white}
+
+\begin{tabularx}{\textwidth}{@{} |l|X|l|l| @{}}
+    \hline
+    From & Reference & Tel & \metaLocation \\
+    {\normalsize \metaDepartment} & {\normalsize \metaAuthor} & {\normalsize \metaTel} & {\normalsize \metaDate} \\
+    \hline
+\end{tabularx}
+
+\vspace{10pt}
+
+{\large\bfseries Report}
+
+\vspace{10pt}
+
+\begin{tabularx}{\textwidth}{@{} |l|X|l|l| @{}}
+    \hline
+    ID & {\large \metaDocId} & Version & {\large \metaVersion} \\
+    \hline
+    Title & {\large\bfseries \metaTitle} & & \\
+    \hline
+    Description & {\large \metaSubtitle} & & \\
+    \hline
+\end{tabularx}
+
+\end{minipage}%
+}
+
+% ============================================================================
+% TITLE BLOCK — printed in the body of the title page (standard layout:
+% title, subtitle, author, date), beneath the branded header band.
+% ============================================================================
+\newcommand{\titleblock}{%
+\begin{center}
+\vspace*{40pt}
+
+{\Huge\bfseries \metaTitle\par}
+
+\vspace{16pt}
+
+{\LARGE \metaSubtitle\par}
+
+\vspace{60pt}
+
+{\large\bfseries Author\par}
+{\large \metaAuthor\par}
+
+\vspace{20pt}
+
+{\large\bfseries Date\par}
+{\large \metaDate\par}
+
+\end{center}%
+}
+
+% ============================================================================
+% FOOTER
+% ============================================================================
+\newcommand{\documentfooter}{%
+\textbf{\textcolor{red}{Confidential}}%
+}
+
+% ============================================================================
+% PAGE STYLES
+% ============================================================================
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[C]{\standardheadergrid}
+
+\fancyfoot[L]{\small\sffamily \documentfooter}
+\fancyfoot[C]{\small\sffamily \metaDocId\ -- \metaTitle\ -- v\metaVersion}
+\fancyfoot[R]{\small\sffamily Page \thepage\ of \pageref{LastPage}}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% First page = title page. Same branding, but no page number in the footer.
+\fancypagestyle{firstpage}{%
+\fancyhf{}
+\fancyhead[C]{\firstpageheadergrid}
+
+\fancyfoot[L]{\small\sffamily \documentfooter}
+\fancyfoot[C]{\small\sffamily \metaDocId\ -- \metaTitle\ -- v\metaVersion}
+\fancyfoot[R]{}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+}
