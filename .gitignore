@@ -9,7 +9,5 @@ __pycache__/
 .quarto/
 project-cache/
 report_files/
-output/
 _freeze/
 .jupyter_cache/
-*.tex
