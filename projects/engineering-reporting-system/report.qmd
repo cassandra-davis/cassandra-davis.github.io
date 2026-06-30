@@ -1,23 +1,17 @@
 ---
-title: "Engineering Validation Report"
-subtitle: "Predictive Maintenance Reporting System"
-author: "Cassandra Davis"
-date: today
-
-execute:
-  echo: false
-  warning: false
-  message: false
-
-project:
-  output-dir: output
+  title: "Predictive Maintenance Reporting System"
+  subtitle: "Engineering Validation Report"
+  customer: "Fictional Automotive OEM"
+  document-id: "PMR-001"
+  version: "1.1"
+  author: "Cassandra Davis"
+  status: "Final"
+  date: today
+  department: "Engineering"
+  tel: "+49 xxxxxxxxxx"
+  classification: "Confidential"
+  location: "Stuttgart"
 ---
-
-```{python}
-from datetime import date
-
-report_date = date.today()
-```
 
 # Executive Summary
 
@@ -41,28 +35,18 @@ The reporting system analyses validation data collected during endurance testing
 
 The reporting workflow successfully identified abnormal sensor trends while reducing manual reporting effort.
 
----
-
 # Project Information
 
-```{python}
-from datetime import date
-import pandas as pd
+| Item       | Value        |
+| ---------- | ------------ |
+| Project    | `{{< meta title >}}` |
+| Customer   | `{{< meta customer >}}` |
+| Document ID | `{{< meta document-id >}}` |
+| Version    | `{{< meta version >}}` |
+| Author     | `{{< meta author >}}` |
+| Status     | `{{< meta status >}}` |
+| Date       | `{{< meta date >}}` |
 
-meta = pd.DataFrame([
-    ["Project", "Predictive Maintenance Reporting System"],
-    ["Customer", "Fictional Automotive OEM"],
-    ["Report ID", "PMR-001"],
-    ["Version", "1.0"],
-    ["Author", "Cassandra Davis"],
-    ["Status", "Final"],
-    ["Date", date.today()]
-], columns=["Item", "Value"])
-
-meta.style.hide(axis="index")
-```
-
----
 
 # Engineering Background
 
@@ -76,7 +60,6 @@ Manual review is:
 
 This reporting system demonstrates how Python automation can transform raw engineering data into clear decision-making information.
 
----
 
 # Test Configuration
 
@@ -88,8 +71,6 @@ This reporting system demonstrates how Python automation can transform raw engin
 | Test Duration    | 6 Hours      |
 | Total Samples    | 14,562       |
 
----
-
 # Acceptance Criteria
 
 | Requirement       | Target      |
@@ -98,8 +79,6 @@ This reporting system demonstrates how Python automation can transform raw engin
 | Sensor Drift      | <2%         |
 | Voltage Stability | ±0.05 V     |
 | Processing Time   | <30 seconds |
-
----
 
 # Dataset Overview
 
@@ -111,23 +90,17 @@ df = load_data()
 df.head()
 ```
 
----
-
 # Dataset Summary
 
 ```{python}
 df.describe()
 ```
 
----
-
 # Missing Data Analysis
 
 ```{python}
 df.isna().sum()
 ```
-
----
 
 # Temperature Profile
 
@@ -137,8 +110,6 @@ from scripts.plots import temperature_plot
 temperature_plot(df)
 ```
 
----
-
 # Voltage Stability
 
 ```{python}
@@ -146,8 +117,6 @@ from scripts.plots import voltage_plot
 
 voltage_plot(df)
 ```
-
----
 
 # Pressure Trend
 
@@ -157,8 +126,6 @@ from scripts.plots import pressure_plot
 pressure_plot(df)
 ```
 
----
-
 # Statistical Summary
 
 ```{python}
@@ -166,8 +133,6 @@ from scripts.analyse import summary
 
 summary(df)
 ```
-
----
 
 # Key Performance Indicators
 
@@ -179,33 +144,23 @@ summary(df)
 | Voltage Drift       |    0.06 V |
 | Missing Samples     |         0 |
 
----
-
 # Engineering Findings
 
 ## Observation 1
 
 Temperature increased steadily throughout the endurance cycle without exceeding allowable limits.
 
----
-
 ## Observation 2
 
 Voltage remained stable with only minor drift occurring during peak operating temperatures.
-
----
 
 ## Observation 3
 
 Pressure values followed expected system behaviour with no abnormal spikes.
 
----
-
 ## Observation 4
 
 No sensor dropout events occurred.
-
----
 
 # Risk Assessment
 
@@ -215,8 +170,6 @@ No sensor dropout events occurred.
 | Data loss               | Low      | None observed |
 | Pressure instability    | Low      | Acceptable    |
 | ECU communication fault | Low      | None observed |
-
----
 
 # Recommendations
 
@@ -228,8 +181,6 @@ The following improvements are recommended:
 * Integrate dashboard reporting into Power BI.
 * Schedule automated report generation after each validation run.
 
----
-
 # Benefits
 
 The automated reporting workflow provides:
@@ -239,8 +190,6 @@ The automated reporting workflow provides:
 * standardised engineering documentation
 * improved traceability
 * faster engineering decision making
-
----
 
 # Deliverables
 
@@ -253,8 +202,6 @@ This project includes:
 * Documentation standards
 * Workflow documentation
 
----
-
 # Skills Demonstrated
 
 * Engineering reporting
@@ -266,8 +213,6 @@ This project includes:
 * KPI reporting
 * Data visualisation
 
----
-
 # Future Improvements
 
 Potential enhancements include:
@@ -278,23 +223,17 @@ Potential enhancements include:
 * Automatic email distribution
 * Multi-project reporting
 
----
-
 # Revision History
 
 | Version | Date       | Description               |
 | ------- | ---------- | ------------------------- |
 | 1.0     | 2026-06-28 | Initial portfolio release |
 
----
-
 # Appendix A — Sample Data
 
 ```{python}
 df.tail()
 ```
-
----
 
 # Appendix B — Report Workflow
 
@@ -325,8 +264,6 @@ Automatic Report Generation
       ▼
 HTML / PDF / DOCX Output
 ```
-
----
 
 # Appendix C — Folder Structure
 
