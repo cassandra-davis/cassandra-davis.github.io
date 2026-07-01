@@ -1,9 +1,12 @@
-# macOS
+# macOS  / editor
 .DS_Store
+.vscode/
 
 # Python
 __pycache__/
 *.pyc
+.venv/
+venv/
 
 # Quarto / reporting
 .quarto/
@@ -11,3 +14,10 @@ project-cache/
 report_files/
 _freeze/
 .jupyter_cache/
+**/*.quarto_ipynb
+
+# LaTeX intermediates (keep-tex is on)
+*.aux
+*.log
+*.out
+*.toc
