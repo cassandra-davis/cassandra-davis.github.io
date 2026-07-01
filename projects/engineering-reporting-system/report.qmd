@@ -1,16 +1,7 @@
 ---
-  title: "Predictive Maintenance Reporting System"
-  subtitle: "Engineering Validation Report"
-  customer: "Fictional Automotive OEM"
-  document-id: "PMR-001"
-  version: "1.1"
-  author: "Cassandra Davis"
-  status: "Final"
-  date: today
-  department: "Engineering"
-  tel: "+49 xxxxxxxxxx"
-  classification: "Confidential"
-  location: "Stuttgart"
+title: "Predictive Maintenance Reporting System"
+author: "Cassandra Davis"
+classification: "Confidential"
 ---
 
 # Executive Summary
@@ -136,13 +127,12 @@ summary(df)
 
 # Key Performance Indicators
 
-| KPI                 |    Result |
-| ------------------- | --------: |
-| Maximum Temperature |      90°C |
-| Average Temperature |      56°C |
-| Maximum Pressure    | 104.2 kPa |
-| Voltage Drift       |    0.06 V |
-| Missing Samples     |         0 |
+```{python}
+from scripts.analyse import calculate_kpis
+import pandas as pd
+kpis = calculate_kpis(df)
+pd.DataFrame(kpis.items(), columns=["KPI", "Result"])
+```
 
 # Engineering Findings
 
@@ -270,11 +260,11 @@ HTML / PDF / DOCX Output
 ```text
 engineering-reporting-system/
 
-├── report.qmd
 ├── _quarto.yml
+├── report.qmd
+├── requirements.txt
 ├── data/
 ├── scripts/
 ├── templates/
-├── images/
 └── output/
 ```
