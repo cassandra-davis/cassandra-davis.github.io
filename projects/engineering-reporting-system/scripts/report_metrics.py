@@ -1,5 +1,4 @@
-from analyse import calculate_kpis
-
+from scripts.analyse import calculate_kpis
 
 def build_summary(df):
 

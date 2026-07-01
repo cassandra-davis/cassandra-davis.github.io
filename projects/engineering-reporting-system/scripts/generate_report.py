@@ -2,20 +2,10 @@
 Example workflow used to generate the engineering report.
 """
 
-from load_data import load_data
-from clean_data import clean_data
-
-from analyse import (
-    calculate_kpis,
-    engineering_assessment
-)
-
-from plots import (
-    temperature_plot,
-    pressure_plot,
-    voltage_plot
-)
-
+from scripts.load_data import load_data
+from scripts.clean_data import clean_data
+from scripts.analyse import calculate_kpis, engineering_assessment
+from scripts.plots import temperature_plot, pressure_plot, voltage_plot
 
 def main():
 
