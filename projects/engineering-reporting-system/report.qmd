@@ -84,7 +84,7 @@ df.head()
 # Dataset Summary
 
 ```{python}
-df.describe()
+df.describe().round(2).T
 ```
 
 # Missing Data Analysis
