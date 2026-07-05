@@ -144,6 +144,7 @@ function renderPortfolio() {
 
   container.innerHTML = `
     <div class="main-content">
+      
       <section class="hero" id="home">
         <div class="hero-content">
           <div class="hero-text">
@@ -157,21 +158,26 @@ function renderPortfolio() {
           </div>
         </div>
       </section>
+
       <section class="stats-section">
         <div class="stats-grid">${statsHtml}</div>
       </section>
+
       <section id="services">
         <h1>Services</h1>
         <div class="services-grid">${servicesHtml}</div>
       </section>
+
       <section id="projects">
         <h1>Selected Projects</h1>
         <div class="project-grid">${projectsHtml}</div>
       </section>
+
       <section id="tools">
         <h1>Tools & Technologies</h1>
         <div class="tool-grid">${toolsHtml}</div>
       </section>
+
       <section class="about-me" id="about-me">
         <h1>${(c.about_portfolio && c.about_portfolio.heading) || 'About Me'}</h1>
         ${ (c.about_portfolio && c.about_portfolio.paragraphs ? c.about_portfolio.paragraphs.map(p => `<p>${p}</p>`).join('') : `<p>${c.personal.summary || ''}</p><p>I focus on building structured systems that turn engineering complexity into clarity.</p>` ) }
@@ -183,11 +189,13 @@ function renderPortfolio() {
           ${ (c.about_portfolio && c.about_portfolio.exploring ? c.about_portfolio.exploring.map(i => `<li>${i}</li>`).join('') : interestsHtml) }
         </ul>
       </section>
+
       <section class="contact" id="contact">
         <h1>Let's Connect</h1>
         <p>Open to freelance work in engineering documentation, reporting systems, and automation.</p>
         <p>📫 <a href="mailto:${c.personal.email}">Email</a> | <a href="${c.personal.linkedin}">LinkedIn</a> | <a href="${c.personal.github}">GitHub</a></p>
       </section>
+
     </div>
   `;
 }

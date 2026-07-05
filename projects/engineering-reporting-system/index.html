@@ -1,133 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Engineering Reporting System Design | Cassandra Davis</title>
-  <link rel="stylesheet" href="../../main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Engineering Reporting System | Cassandra Davis</title>
+
+    <link rel="stylesheet" href="../../main.css">
 </head>
 
 <body>
 
 <div class="project-page">
-  <section>
 
-    <h1>Engineering Reporting System Design</h1>
+<section>
 
-    <p><em>
-      Standardising engineering reporting to improve clarity, consistency and decision-making across technical teams.
-    </em></p>
+<h1>Automated Engineering Reporting System</h1>
 
-    <img src="reporting-system.png" alt="Engineering reporting system preview" class="project-image">
+<p class="subtitle">
+Transforming raw engineering validation data into professional HTML, PDF and Microsoft Word reports using Python and Quarto.
+</p>
 
-    <h3>Tools Used</h3>
-    <p>Excel, Python (data analysis), Technical Writing, Documentation Design</p>
-
-    <h3>Project Overview</h3>
-    <p>
-      This project demonstrates the design of a structured engineering reporting system for automotive test and validation data.
-      The goal was to transform inconsistent engineering reports into a standardised format that improves readability,
-      traceability and decision-making.
-    </p>
-
-    <h3>The Challenge</h3>
-    <p>
-      Engineering teams were producing reports in inconsistent formats, making it difficult to compare results,
-      extract insights, and identify trends efficiently.
-    </p>
-
-    <ul>
-      <li>Inconsistent reporting structures across engineers</li>
-      <li>Key insights buried in unstructured text</li>
-      <li>High manual effort required to interpret results</li>
-      <li>Lack of standard templates or documentation rules</li>
-    </ul>
-
-    <h3>My Approach</h3>
-
-    <h4>1. Analysis of Existing Reports</h4>
-    <p>
-      Identified common structural issues such as inconsistent formatting, missing summaries and unclear conclusions.
-    </p>
-
-    <h4>2. Standardised Report Structure Design</h4>
-    <p>
-      Developed a reusable engineering report template to ensure consistent structure across all test documentation.
-    </p>
-
-    <h4>3. Data Structuring Improvements</h4>
-    <p>
-      Reorganised engineering outputs into clear sections including summaries, KPI tables and structured observations.
-    </p>
-
-    <h4>4. Workflow Definition</h4>
-    <p>
-      Designed a repeatable reporting workflow from raw data input through to final engineering sign-off.
-    </p>
-
-    <h3>Standard Report Structure</h3>
-
-    <ul>
-      <li><strong>Executive Summary</strong> – high-level findings and outcomes</li>
-      <li><strong>Test Overview</strong> – objectives and scope</li>
-      <li><strong>Test Conditions</strong> – environment and configuration</li>
-      <li><strong>Results</strong> – measured outputs and observations</li>
-      <li><strong>Analysis</strong> – interpretation of results</li>
-      <li><strong>Conclusions</strong> – final engineering assessment</li>
-      <li><strong>Recommendations</strong> – suggested next steps</li>
-    </ul>
-
-    <h3>Example Deliverable</h3>
-
-    <p>
-      Below is an example of how engineering data is transformed into a structured reporting format:
-    </p>
-
-    <ul>
-      <li>Raw test data → structured KPI table</li>
-      <li>Unstructured notes → summarised observations</li>
-      <li>Long reports → clear executive summary</li>
-      <li>Inconsistent formats → standardised template</li>
-    </ul>
-
-    <h3>Key Outcomes</h3>
-
-    <ul>
-      <li>Improved readability of engineering reports</li>
-      <li>Reduced time required to interpret test results</li>
-      <li>Standardised documentation across reporting teams</li>
-      <li>Enabled easier comparison of test cycles</li>
-    </ul>
-
-    <h3>Skills Demonstrated</h3>
-
-    <ul>
-      <li>Engineering reporting system design</li>
-      <li>Technical documentation structuring</li>
-      <li>Data interpretation and presentation</li>
-      <li>Workflow and process improvement</li>
-      <li>Technical communication</li>
-    </ul>
-
-    <h3>Deliverables</h3>
-
-    <ul>
-      <li>Standardised engineering report template</li>
-      <li>Example completed engineering report</li>
-      <li>Sample dataset for validation</li>
-      <li>Workflow diagram for reporting process</li>
-    </ul>
-
-    <h3>Note</h3>
-    <p>
-      This is a fictional portfolio project created to demonstrate engineering reporting system design,
-      technical documentation, and process improvement skills.
-    </p>
-
-    <a href="../../index.html#projects" class="button">← Back to Portfolio</a>
-
-  </section>
+<div class="project-hero-image">
+    <img src="assets/html-screenshot.png"
+         alt="Engineering reporting system preview"
+         onclick="openModal(this.src)">
 </div>
 
+<div class="button-group">
+
+<a href="output/report.html" class="button">
+View Live Report
+</a>
+
+<a href="output/report.pdf" class="button">
+Download PDF
+</a>
+
+<a href="https://github.com/cassandra-davis/cassandra-davis.github.io/tree/main/projects/engineering-reporting-system"
+target="_blank"
+class="button">
+GitHub Repository
+</a>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2>Overview</h2>
+
+<p>
+This portfolio project demonstrates an automated engineering reporting workflow built with Python and Quarto.
+Raw validation data is analysed, visualised and transformed into a professional engineering report that can be published as HTML, PDF and Microsoft Word documentation from a single source.
+</p>
+
+</section>
+
+
+
+<section>
+
+<h2>Highlights</h2>
+
+<div class="feature-grid">
+
+<div class="feature-card">
+<h3>⚙️ Automated Workflow</h3>
+<p>Generate complete engineering reports from a single command.</p>
+</div>
+
+<div class="feature-card">
+<h3>📊 Data Analysis</h3>
+<p>Automatically calculate statistics, KPIs and engineering summaries.</p>
+</div>
+
+<div class="feature-card">
+<h3>📈 Visualisation</h3>
+<p>Create publication-ready charts directly from the validation dataset.</p>
+</div>
+
+<div class="feature-card">
+<h3>📄 Multi-format Output</h3>
+<p>Produce HTML, PDF and Word reports from the same source document.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+    <h2>Workflow</h2>
+
+    <img src="assets/workflow.png"
+         alt="Engineering reporting workflow"
+         class="project-image-wide clickable-image"
+         onclick="openModal(this.src)">
+
+</section>
+
+</section>
+
+<section>
+
+  <h2>Report Preview</h2>
+
+  <p>
+  The finished report includes an executive summary, engineering analysis, KPI tables, charts, recommendations and appendices.
+  Click any preview to view the full-size image.
+  </p>
+
+  <div class="report-grid">
+
+    <img src="assets/exec-summ-screenshot.png" alt="Executive Summary" onclick="openModal(this.src)">
+    <img src="assets/kpi-screenshot.png" alt="KPI Table" onclick="openModal(this.src)">
+    <img src="assets/graph-temp.png" alt="Engineering Charts" onclick="openModal(this.src)">
+    <img src="assets/report-page.png" alt="Report Page" onclick="openModal(this.src)">
+
+  </div>
+
+</section>
+
+<!-- Modal -->
+<div id="imgModal" class="modal" onclick="closeModal()">
+  <img id="modalImg">
+</div>
+
+<section>
+
+    <h2>Technologies</h2>
+
+    <div class="tech-grid">
+
+        <span class="tech-pill">🐍 Python</span>
+        <span class="tech-pill">📄 Quarto</span>
+        <span class="tech-pill">🐼 Pandas</span>
+        <span class="tech-pill">📈 Matplotlib</span>
+        <span class="tech-pill">📝 Markdown</span>
+        <span class="tech-pill">📚 LaTeX</span>
+        <span class="tech-pill">🌐 HTML</span>
+        <span class="tech-pill">🌳 Git</span>
+        <span class="tech-pill">🚀 GitHub Pages</span>
+
+    </div>
+
+</section>
+
+<section>
+
+<h2>Skills Demonstrated</h2>
+
+<ul>
+
+<li>Python automation</li>
+<li>Engineering reporting</li>
+<li>Data analysis</li>
+<li>Technical writing</li>
+<li>Workflow automation</li>
+<li>Technical documentation</li>
+<li>Data visualisation</li>
+<li>Professional report generation</li>
+
+</ul>
+
+</section>
+
+
+
+<section>
+
+<h2>Explore the Project</h2>
+
+<p>
+View the complete interactive report, browse the source code or download the PDF version.
+</p>
+
+<div class="button-group">
+
+<a href="output/report.html" class="button">
+Open Live Report
+</a>
+
+<a href="output/report.pdf" class="button">
+Download PDF
+</a>
+
+<a href="https://github.com/cassandra-davis/cassandra-davis.github.io/tree/main/projects/engineering-reporting-system"
+target="_blank"
+class="button">
+View Source Code
+</a>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<p class="small-note">
+This is a fictional portfolio project created to demonstrate engineering reporting, automation, technical documentation and data analysis skills.
+</p>
+
+<p>
+
+<a href="../../index.html#projects" class="button">
+← Back to Portfolio
+</a>
+
+</p>
+
+</section>
+
+</div>
+
+<script>
+function openModal(src) {
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("modalImg");
+
+    modal.style.display = "flex";
+    modalImg.src = src;
+}
+
+function closeModal() {
+    document.getElementById("imgModal").style.display = "none";
+}
+</script>
+
 </body>
+
 </html>

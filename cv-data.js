@@ -222,10 +222,13 @@ var CV_DATA = {
 
   projects: [
     {
-      title: "Engineering Reporting System Design",
-      image: "images/project-reporting-system.png",
+      title: "Automated Engineering Reports",
+      image: "projects/engineering-reporting-system/assets/html-screenshot.png",
       link: "projects/engineering-reporting-system/",
-      text: "Designed a standardised engineering reporting framework to improve clarity, consistency, and decision-making across technical teams."
+      text: `- Built Python + Quarto pipeline for automated reporting  
+            - Converts raw validation data into KPIs, charts, and insights  
+            - Outputs structured HTML, PDF, and DOCX reports  
+            - Improves consistency and reduces manual reporting effort`
     },
     {
       title: "Technical Documentation Improvement",
